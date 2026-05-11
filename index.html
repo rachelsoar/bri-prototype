@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civic Virtues in Action — Bill of Rights Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  --navy: #1c3361;
+  --navy-light: #2a4a7f;
+  --navy-dark: #142647;
+  --navy-darker: #0e1a33;
+  --orange: #e67700;
+  --orange-light: #f5a623;
+  --orange-bg: #fcf4eb;
+  --teal: #3bbfae;
+  --teal-light: #e8f7f5;
+  --sky: #00a5cf;
+  --bg: #f7f5f2;
+  --bg-card: #ffffff;
+  --bg-cream: #f0ebe4;
+  --border: #d1d5de;
+  --border-light: #e8e6e1;
+  --fg: #1a1a2e;
+  --fg-muted: #555566;
+  --fg-subtle: #8a8a99;
+  --r: 8px;
+  --r-lg: 12px;
+  --shadow: 0 1px 4px rgba(28,51,97,0.06), 0 0 0 1px rgba(28,51,97,0.04);
+  --shadow-hover: 0 4px 16px rgba(28,51,97,0.1), 0 0 0 1px rgba(28,51,97,0.06);
+  --t: 0.2s ease;
+  --sidebar-w: 260px;
+  --topbar-h: 52px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ═══════════════════════════════════════════
+   TOP BAR (thin)
+   ═══════════════════════════════════════════ */
+.topbar {
+  height: var(--topbar-h);
+  background: var(--navy-darker);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 0;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+}
+.topbar-logo {
+  width: var(--sidebar-w);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+  background: var(--navy-dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+.topbar-logo .logo-letters {
+  font-family: 'Libre Baskerville', serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.topbar-logo .logo-divider {
+  width: 1px; height: 22px;
+  background: rgba(255,255,255,0.2);
+}
+.topbar-logo .logo-sub {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 500;
+}
+.topbar-search {
+  flex: 1;
+  max-width: 480px;
+  margin: 0 24px;
+  position: relative;
+}
+.topbar-search input {
+  width: 100%;
+  padding: 8px 14px 8px 38px;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Libre Franklin', sans-serif;
+  outline: none;
+  transition: var(--t);
+}
+.topbar-search input::placeholder { color: rgba(255,255,255,0.35); }
+.topbar-search input:focus { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); }
+.topbar-search .material-symbols-outlined {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  font-size: 18px; color: rgba(255,255,255,0.35);
+}
+.topbar-right {
+  display: flex; align-items: center; gap: 16px;
+}
+.topbar-teacher {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+}
+.topbar-teacher .material-symbols-outlined { font-size: 20px; }
+.topbar-unit-badge {
+  background: var(--orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════════════════
+   LEFT SIDEBAR
+   ═══════════════════════════════════════════ */
+.sidebar {
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--navy);
+  overflow-y: auto;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+.sidebar-section {
+  padding: 16px 16px 8px;
+}
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--t);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: 'Libre Franklin', sans-serif;
+}
+.sidebar-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.sidebar-item.active { background: rgba(255,255,255,0.12); color: #fff; }
+.sidebar-item .material-symbols-outlined { font-size: 20px; flex-shrink: 0; }
+.sidebar-item .si-count {
+  margin-left: auto;
+  font-size: 11px;
+  background: rgba(255,255,255,0.1);
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.sidebar-virtue-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sidebar-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 4px 16px;
+}
+
+/* Disabled / Coming Soon items */
+.sidebar-item.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  position: relative;
+}
+.sidebar-item.disabled:hover { background: none; color: rgba(255,255,255,0.3); }
+.sidebar-soon {
+  font-size: 8px;
+  font-weight: 700;
+  background: var(--orange);
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+
+/* ═══════════════════════════════════════════
+   UNIT SELECTOR (top of sidebar)
+   ═══════════════════════════════════════════ */
+.unit-selector {
+  padding: 14px 16px 10px;
+}
+.unit-current {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--t);
+}
+.unit-current:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+}
+.unit-current-icon {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.unit-current-icon .material-symbols-outlined { font-size: 18px; color: #fff; }
+.unit-current-text {
+  flex: 1; min-width: 0;
+}
+.unit-current-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.4);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.unit-current-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.unit-current-arrow {
+  color: rgba(255,255,255,0.35);
+  transition: var(--t);
+}
+.unit-current:hover .unit-current-arrow { color: rgba(255,255,255,0.6); }
+.unit-current-arrow .material-symbols-outlined { font-size: 18px; }
+
+/* Unit dropdown */
+.unit-dropdown {
+  display: none;
+  margin-top: 6px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.unit-dropdown.open { display: block; }
+.unit-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  cursor: default;
+  transition: var(--t);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: 'Libre Franklin', sans-serif;
+}
+.unit-option.active-unit {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+.unit-option.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.unit-option .unit-num {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  flex-shrink: 0;
+}
+.unit-option.active-unit .unit-num {
+  background: var(--orange);
+  color: #fff;
+}
+.unit-option.locked .unit-num {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.35);
+}
+.unit-option .unit-lock {
+  margin-left: auto;
+  font-size: 14px;
+  color: rgba(255,255,255,0.2);
+}
+.unit-browse-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: var(--t);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  width: 100%;
+  font-family: 'Libre Franklin', sans-serif;
+}
+.unit-browse-all:hover { color: var(--orange-light); }
+.unit-browse-all .material-symbols-outlined { font-size: 14px; }
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-footer-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+}
+.sidebar-footer-text a { color: var(--orange-light); text-decoration: none; }
+
+/* ═══════════════════════════════════════════
+   MAIN AREA
+   ═══════════════════════════════════════════ */
+.main-area {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--topbar-h);
+  height: calc(100vh - var(--topbar-h));
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* ═══════════════════════════════════════════
+   VIEW: BROWSE (clip grid)
+   ═══════════════════════════════════════════ */
+.view { display: none; }
+.view.active { display: block; }
+
+/* Browse Header */
+.browse-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  padding: 36px 40px 32px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.browse-header::after {
+  content: '';
+  position: absolute;
+  top: -50%; right: -8%;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,119,0,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bh-inner { position: relative; z-index: 1; max-width: 900px; }
+.bh-eyebrow {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--orange-light); margin-bottom: 6px;
+}
+.bh-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 28px; font-weight: 700;
+  margin-bottom: 8px; line-height: 1.2;
+}
+.bh-swoosh { display: inline-block; width: 44px; height: 3px; background: var(--orange); border-radius: 2px; margin-bottom: 10px; }
+.bh-sub { font-size: 15px; font-weight: 300; opacity: 0.8; max-width: 640px; line-height: 1.5; }
+.bh-meta {
+  display: flex; gap: 18px; margin-top: 16px; font-size: 12px; opacity: 0.6;
+}
+.bh-meta-item { display: flex; align-items: center; gap: 4px; }
+.bh-meta-item .material-symbols-outlined { font-size: 15px; }
+
+/* Browse Content */
+.browse-content { padding: 28px 36px 60px; }
+
+/* Filter row */
+.filter-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 24px; flex-wrap: wrap; gap: 12px;
+}
+.filter-row .results {
+  font-size: 14px; color: var(--fg-muted);
+}
+.filter-row .results strong { color: var(--fg); }
+.filter-row select {
+  border: 1.5px solid var(--border); padding: 6px 12px;
+  border-radius: 6px; font-family: 'Libre Franklin', sans-serif;
+  font-size: 13px; background: var(--bg-card); color: var(--fg-muted); cursor: pointer;
+}
+
+/* Virtue Section */
+.virtue-section { margin-bottom: 36px; }
+.virtue-sec-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-light);
+}
+.vs-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: #fff; flex-shrink: 0;
+}
+.vs-text h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20px; font-weight: 700; color: var(--navy);
+}
+.vs-text p {
+  font-size: 13px; color: var(--fg-muted); font-style: italic; margin-top: 1px;
+}
+.vs-count { margin-left: auto; font-size: 13px; color: var(--fg-subtle); font-weight: 500; }
+
+/* Clip Grid */
+.clip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.clip-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--t);
+  box-shadow: var(--shadow);
+}
+.clip-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--navy); }
+.clip-thumb {
+  background: var(--navy-dark);
+  height: 150px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.clip-thumb .play-btn {
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--t);
+}
+.clip-card:hover .play-btn { background: var(--orange); border-color: var(--orange); }
+.play-btn .material-symbols-outlined { color: #fff; font-size: 26px; }
+.clip-dur {
+  position: absolute; bottom: 8px; right: 8px;
+  background: rgba(0,0,0,0.7); color: #fff;
+  font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+}
+.clip-jur {
+  position: absolute; top: 8px; left: 8px;
+  background: rgba(0,0,0,0.55); color: #fff;
+  font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 4px;
+  display: flex; align-items: center; gap: 4px;
+}
+.clip-jur .material-symbols-outlined { font-size: 13px; }
+.clip-body { padding: 14px 16px 16px; }
+.clip-body h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  margin-bottom: 5px; line-height: 1.35;
+}
+.clip-body p {
+  font-size: 13px; color: var(--fg-muted); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.clip-tags { display: flex; gap: 4px; margin-top: 10px; flex-wrap: wrap; }
+.clip-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 9px;
+  border-radius: 10px; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.tag-v { color: #fff; }
+.tag-p { background: #e8ecf5; color: var(--navy); }
+.clip-meta {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 8px; font-size: 11px; color: var(--fg-subtle);
+}
+.clip-meta .material-symbols-outlined { font-size: 13px; }
+
+/* ═══════════════════════════════════════════
+   VIEW: CLIP DETAIL (full page)
+   ═══════════════════════════════════════════ */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0;
+  min-height: calc(100vh - var(--topbar-h));
+}
+.detail-main { padding: 0; }
+.detail-sidebar-right {
+  background: var(--bg-card);
+  border-left: 1px solid var(--border-light);
+  padding: 24px 20px;
+  overflow-y: auto;
+  height: calc(100vh - var(--topbar-h));
+}
+
+/* Video area */
+.detail-video {
+  background: var(--navy-dark);
+  height: 400px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.detail-video .play-btn {
+  width: 80px; height: 80px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: var(--t);
+}
+.detail-video .play-btn:hover { background: var(--orange); border-color: var(--orange); }
+.detail-video .play-btn .material-symbols-outlined { color: #fff; font-size: 40px; }
+.detail-back {
+  position: absolute; top: 16px; left: 16px;
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(0,0,0,0.4); border: none;
+  color: #fff; padding: 7px 14px 7px 10px; border-radius: 8px;
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  font-family: 'Libre Franklin', sans-serif; transition: var(--t);
+}
+.detail-back:hover { background: rgba(0,0,0,0.6); }
+.detail-back .material-symbols-outlined { font-size: 18px; }
+.detail-video-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  padding: 32px 32px 20px;
+}
+.dvo-jur {
+  font-size: 12px; color: rgba(255,255,255,0.7);
+  display: flex; align-items: center; gap: 5px; margin-bottom: 6px;
+}
+.dvo-jur .material-symbols-outlined { font-size: 14px; }
+.dvo-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px; font-weight: 700; color: #fff;
+  line-height: 1.25;
+}
+.dvo-meta {
+  display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.6);
+}
+.dvo-meta-item { display: flex; align-items: center; gap: 4px; }
+.dvo-meta-item .material-symbols-outlined { font-size: 14px; }
+
+/* Detail body */
+.detail-body { padding: 28px 32px 60px; max-width: 800px; }
+.detail-tags { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+.detail-desc { font-size: 15px; color: var(--fg-muted); line-height: 1.65; margin-bottom: 24px; }
+
+/* Transcript — always visible, with language tabs and audio player */
+.transcript-section { margin-bottom: 24px; }
+.transcript-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.transcript-panel-head {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.transcript-panel-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+}
+.transcript-panel-title .material-symbols-outlined { font-size: 18px; color: var(--orange); }
+.transcript-lang-tabs {
+  display: flex; gap: 0;
+}
+.transcript-lang-tab {
+  padding: 5px 14px;
+  font-size: 12px; font-weight: 600;
+  color: var(--fg-subtle);
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: none;
+  font-family: 'Libre Franklin', sans-serif;
+  transition: var(--t);
+}
+.transcript-lang-tab:first-child { border-radius: 6px 0 0 6px; }
+.transcript-lang-tab:last-child { border-radius: 0 6px 6px 0; border-left: none; }
+.transcript-lang-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.transcript-lang-tab.disabled { opacity: 0.35; cursor: not-allowed; }
+.transcript-panel-body {
+  padding: 16px 18px;
+  font-size: 14px; line-height: 1.75; color: var(--fg-muted);
+  max-height: 220px; overflow-y: auto;
+}
+.transcript-panel-body::-webkit-scrollbar { width: 5px; }
+.transcript-panel-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.transcript-speaker { font-weight: 600; color: var(--navy); }
+.transcript-time { font-size: 12px; color: var(--fg-subtle); margin-left: 6px; }
+
+/* Audio Player */
+.audio-player {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-light);
+  background: #fafaf8;
+}
+.audio-play-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: none; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: var(--t); flex-shrink: 0;
+}
+.audio-play-btn:hover { background: var(--navy-light); }
+.audio-play-btn .material-symbols-outlined { font-size: 20px; }
+.audio-progress { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.audio-bar-wrap {
+  width: 100%; height: 6px;
+  background: var(--border-light); border-radius: 3px;
+  overflow: hidden; cursor: pointer;
+}
+.audio-bar {
+  height: 100%; background: var(--navy);
+  border-radius: 3px; width: 0%; transition: width 0.3s;
+}
+.audio-times {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: var(--fg-subtle);
+  font-weight: 500; font-variant-numeric: tabular-nums;
+}
+.audio-label {
+  font-size: 11px; color: var(--fg-subtle);
+  display: flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+.audio-label .material-symbols-outlined { font-size: 14px; }
+
+/* Callout boxes */
+.callouts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.co-box {
+  padding: 16px 18px; border-radius: var(--r);
+  border-left: 4px solid;
+}
+.co-box h4 {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 5px;
+  display: flex; align-items: center; gap: 5px;
+}
+.co-box h4 .material-symbols-outlined { font-size: 15px; }
+.co-box p { font-size: 14px; line-height: 1.5; color: var(--fg); }
+.co-why { background: #e8f0fc; border-color: var(--sky); }
+.co-why h4 { color: var(--sky); }
+.co-watch { background: var(--orange-bg); border-color: var(--orange); }
+.co-watch h4 { color: var(--orange); }
+.co-connect { background: var(--teal-light); border-color: var(--teal); }
+.co-connect h4 { color: #1a7a6d; }
+.co-evidence { background: #ffffff; border-color: var(--navy); }
+.co-evidence h4 { color: var(--navy); }
+
+/* Transcript */
+/* (transcript moved to right panel — old toggle removed) */
+
+/* Inquiry */
+.inquiry-section { margin-top: 8px; }
+.inquiry-section h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.inquiry-section h3 .material-symbols-outlined { font-size: 20px; color: var(--orange); }
+.inquiry-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.inquiry-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 16px; background: var(--bg);
+  border-radius: var(--r); font-size: 14px; line-height: 1.5;
+  border: 1px solid var(--border-light);
+}
+.iq-num {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.iq-phase {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--orange); margin-bottom: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   RIGHT SIDEBAR — Recommended Clips
+   ═══════════════════════════════════════════ */
+.rec-heading {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px; font-weight: 700; color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-light);
+}
+.rec-card {
+  display: flex; gap: 12px; padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer; transition: var(--t);
+}
+.rec-card:last-child { border-bottom: none; }
+.rec-card:hover { opacity: 0.8; }
+.rec-thumb {
+  width: 120px; height: 68px; border-radius: 6px;
+  background: var(--navy-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative;
+}
+.rec-thumb .material-symbols-outlined { color: rgba(255,255,255,0.5); font-size: 22px; }
+.rec-dur {
+  position: absolute; bottom: 3px; right: 3px;
+  background: rgba(0,0,0,0.7); color: #fff;
+  font-size: 9px; font-weight: 600; padding: 1px 5px; border-radius: 3px;
+}
+.rec-info h4 {
+  font-size: 12px; font-weight: 600; color: var(--fg);
+  line-height: 1.35; margin-bottom: 3px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.rec-info p { font-size: 11px; color: var(--fg-subtle); }
+.rec-tag {
+  display: inline-block; font-size: 9px; font-weight: 700;
+  padding: 1px 7px; border-radius: 8px; color: #fff;
+  margin-top: 4px; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   BROWSE TOPICS GRID
+   ═══════════════════════════════════════════ */
+.topics-section { margin-bottom: 28px; }
+.topics-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.topics-head h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+}
+.topics-head h3 .material-symbols-outlined { font-size: 20px; color: var(--teal); }
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 10px;
+}
+.topic-card {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  transition: var(--t);
+  box-shadow: var(--shadow);
+}
+.topic-card:hover {
+  border-color: var(--navy);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+.topic-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.topic-icon .material-symbols-outlined { font-size: 20px; color: #fff; }
+.topic-card-text { min-width: 0; }
+.topic-card-text h4 { font-size: 13px; font-weight: 600; color: var(--fg); line-height: 1.25; }
+.topic-card-text p { font-size: 11px; color: var(--fg-subtle); margin-top: 1px; }
+
+/* ═══════════════════════════════════════════
+   SEARCH VIEW
+   ═══════════════════════════════════════════ */
+.search-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  padding: 28px 36px 24px;
+}
+.search-query-display {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px; font-weight: 700; color: var(--navy);
+  margin-bottom: 4px;
+}
+.search-query-display span { color: var(--orange); }
+.search-result-count {
+  font-size: 14px; color: var(--fg-muted); margin-bottom: 20px;
+}
+.search-filters {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.search-filter-row {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.search-filter-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--fg-subtle); min-width: 65px;
+}
+.search-chip {
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 500;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card); color: var(--fg-muted);
+  cursor: pointer; transition: var(--t);
+  font-family: 'Libre Franklin', sans-serif;
+}
+.search-chip:hover { border-color: var(--navy); color: var(--navy); }
+.search-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.search-chip .material-symbols-outlined { font-size: 14px; vertical-align: -2px; margin-right: 2px; }
+.search-content { padding: 28px 36px 60px; }
+.search-suggestions {
+  margin-bottom: 24px;
+}
+.search-suggestions-title {
+  font-size: 13px; font-weight: 600; color: var(--fg-muted);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.search-suggestions-title .material-symbols-outlined { font-size: 16px; color: var(--orange); }
+.search-suggest-chips {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.search-suggest-chip {
+  padding: 6px 16px; border-radius: 20px;
+  font-size: 13px; font-weight: 500;
+  background: var(--bg-card); color: var(--fg-muted);
+  border: 1.5px solid var(--border-light);
+  cursor: pointer; transition: var(--t);
+  font-family: 'Libre Franklin', sans-serif;
+  display: flex; align-items: center; gap: 5px;
+}
+.search-suggest-chip:hover { border-color: var(--navy); color: var(--navy); background: #fff; }
+.search-suggest-chip .material-symbols-outlined { font-size: 15px; }
+
+/* ═══════════════════════════════════════════
+   PLACEHOLDER / COMING SOON CARDS
+   ═══════════════════════════════════════════ */
+.clip-card.placeholder {
+  opacity: 0.45;
+  pointer-events: none;
+  user-select: none;
+}
+.clip-card.placeholder .clip-thumb {
+  background: linear-gradient(135deg, #d1d5de 0%, #c4c8d2 100%);
+}
+.clip-card.placeholder .play-btn {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+.clip-card.placeholder .clip-body h3 {
+  color: var(--fg-subtle);
+}
+.clip-card.placeholder .clip-body p {
+  color: var(--border);
+}
+.placeholder-badge {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 14px; border-radius: 6px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  display: flex; align-items: center; gap: 5px;
+  z-index: 2;
+}
+.placeholder-badge .material-symbols-outlined { font-size: 15px; }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+.fade-up {
+  opacity: 0; transform: translateY(10px);
+  animation: fadeUp 0.35s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.clip-card:nth-child(1) { animation-delay: 0s; }
+.clip-card:nth-child(2) { animation-delay: 0.04s; }
+.clip-card:nth-child(3) { animation-delay: 0.08s; }
+.clip-card:nth-child(4) { animation-delay: 0.12s; }
+
+/* Empty state */
+.empty-state {
+  text-align: center; padding: 60px 20px; color: var(--fg-subtle);
+}
+.empty-state .material-symbols-outlined { font-size: 48px; margin-bottom: 12px; }
+.empty-state h3 { font-size: 18px; color: var(--fg-muted); margin-bottom: 6px; }
+
+/* ═══════════════════════════════════════════
+   RECENTLY APPROVED TIMELINE
+   ═══════════════════════════════════════════ */
+.timeline-section {
+  margin-bottom: 32px;
+}
+.timeline-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.timeline-head h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+}
+.timeline-head h3 .material-symbols-outlined { font-size: 20px; color: var(--orange); }
+.timeline-head .tl-see-all {
+  font-size: 13px; font-weight: 600; color: var(--navy-light);
+  text-decoration: none; display: flex; align-items: center; gap: 4px;
+  cursor: pointer; transition: var(--t);
+}
+.timeline-head .tl-see-all:hover { color: var(--orange); }
+.timeline-head .tl-see-all .material-symbols-outlined { font-size: 16px; }
+.timeline-strip {
+  display: flex; gap: 14px;
+  overflow-x: auto; padding-bottom: 14px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  position: relative;
+}
+.timeline-strip::-webkit-scrollbar { height: 8px; }
+.timeline-strip::-webkit-scrollbar-track { background: var(--border-light); border-radius: 4px; }
+.timeline-strip::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; min-width: 60px; }
+.timeline-strip::-webkit-scrollbar-thumb:hover { background: var(--fg-subtle); }
+.timeline-scroll-wrap {
+  position: relative;
+}
+.tl-scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: var(--t);
+  color: var(--fg-muted);
+}
+.tl-scroll-btn:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.tl-scroll-btn .material-symbols-outlined { font-size: 22px; }
+.tl-scroll-left { left: -16px; }
+.tl-scroll-right { right: -16px; }
+.tl-card {
+  flex-shrink: 0;
+  width: 240px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--t);
+  box-shadow: var(--shadow);
+  scroll-snap-align: start;
+}
+.tl-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--navy); }
+.tl-card-thumb {
+  height: 100px;
+  background: var(--navy-dark);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.tl-card-thumb .material-symbols-outlined { color: rgba(255,255,255,0.35); font-size: 28px; }
+.tl-card-dur {
+  position: absolute; bottom: 6px; right: 6px;
+  background: rgba(0,0,0,0.7); color: #fff;
+  font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px;
+}
+.tl-card-new {
+  position: absolute; top: 6px; left: 6px;
+  background: var(--teal); color: #fff;
+  font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 3px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.tl-card-body { padding: 10px 12px 12px; }
+.tl-card-body h4 {
+  font-size: 12px; font-weight: 600; color: var(--fg);
+  line-height: 1.3; margin-bottom: 4px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tl-card-body .tl-meta {
+  font-size: 11px; color: var(--fg-subtle);
+  display: flex; align-items: center; gap: 4px;
+}
+.tl-card-body .tl-meta .material-symbols-outlined { font-size: 13px; }
+.tl-card-tag {
+  display: inline-block;
+  font-size: 9px; font-weight: 700; padding: 1px 7px;
+  border-radius: 8px; color: #fff; margin-top: 6px;
+  text-transform: uppercase;
+}
+.tl-date-marker {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0 6px;
+  min-width: 52px;
+}
+.tl-date-marker .tl-dm-day {
+  font-size: 22px; font-weight: 800; color: var(--navy);
+  line-height: 1;
+}
+.tl-date-marker .tl-dm-month {
+  font-size: 10px; font-weight: 600; color: var(--fg-subtle);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.tl-date-marker .tl-dm-line {
+  width: 2px; height: 16px; background: var(--border); margin: 4px 0;
+}
+
+/* ═══════════════════════════════════════════
+   HERO MAP (in header, no box)
+   ═══════════════════════════════════════════ */
+.bh-columns {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.bh-text { flex: 1; min-width: 0; }
+.bh-map-wrap {
+  flex-shrink: 0;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bh-map {
+  width: 100%;
+  height: auto;
+  cursor: default;
+}
+.bh-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.bh-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  margin-top: 6px;
+  cursor: pointer;
+  transition: var(--t);
+  text-decoration: none;
+}
+.bh-map-link:hover {
+  color: rgba(255,255,255,0.7);
+}
+.bh-map-link .material-symbols-outlined { font-size: 13px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     TOP BAR
+     ═══════════════════════════════════════════ -->
+<header class="topbar">
+  <div class="topbar-logo" onclick="showBrowse()">
+    <span class="logo-letters">BRI</span>
+    <span class="logo-divider"></span>
+    <span class="logo-sub">Civic Virtues in Action</span>
+  </div>
+  <div class="topbar-search">
+    <span class="material-symbols-outlined">search</span>
+    <input type="text" placeholder="Search clips by topic, speaker, location..." id="searchInput" oninput="handleSearchInput()" onkeydown="if(event.key==='Escape'){clearSearch();}">
+  </div>
+  <div class="topbar-right">
+    <span class="topbar-unit-badge">Unit 1 — GoPo</span>
+    <div class="topbar-teacher">
+      <span class="material-symbols-outlined">school</span>
+      Ms. Rodriguez
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     LEFT SIDEBAR
+     ═══════════════════════════════════════════ -->
+<nav class="sidebar">
+  <!-- Unit Selector -->
+  <div class="unit-selector">
+    <div class="unit-current" onclick="toggleUnitDropdown()">
+      <div class="unit-current-icon">
+        <span class="material-symbols-outlined">menu_book</span>
+      </div>
+      <div class="unit-current-text">
+        <div class="unit-current-label">Current Unit</div>
+        <div class="unit-current-name">Unit 1: Foundation of Self-Gov</div>
+      </div>
+      <div class="unit-current-arrow">
+        <span class="material-symbols-outlined">expand_more</span>
+      </div>
+    </div>
+    <div class="unit-dropdown" id="unitDropdown">
+      <button class="unit-option active-unit">
+        <span class="unit-num">1</span>
+        Foundation of Self-Government
+      </button>
+      <button class="unit-option locked">
+        <span class="unit-num">2</span>
+        Branches of Government
+        <span class="material-symbols-outlined unit-lock">lock</span>
+      </button>
+      <button class="unit-option locked">
+        <span class="unit-num">3</span>
+        Civil Liberties &amp; Rights
+        <span class="material-symbols-outlined unit-lock">lock</span>
+      </button>
+      <button class="unit-option locked">
+        <span class="unit-num">4</span>
+        Political Ideologies
+        <span class="material-symbols-outlined unit-lock">lock</span>
+      </button>
+      <button class="unit-option locked">
+        <span class="unit-num">5</span>
+        Political Participation
+        <span class="material-symbols-outlined unit-lock">lock</span>
+      </button>
+      <button class="unit-option locked">
+        <span class="unit-num">6</span>
+        Town Hall Simulation
+        <span class="material-symbols-outlined unit-lock">lock</span>
+      </button>
+      <button class="unit-browse-all">
+        <span class="material-symbols-outlined">library_books</span>
+        Browse full curriculum library
+      </button>
+    </div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Explore</div>
+    <button class="sidebar-item active" id="navAll" onclick="filterVirtue('all')">
+      <span class="material-symbols-outlined">grid_view</span>
+      All Clips
+      <span class="si-count" id="countAll">12</span>
+    </button>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Civic Virtues</div>
+    <div id="sidebarVirtues"></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Tools</div>
+    <div class="sidebar-item disabled">
+      <span class="material-symbols-outlined">construction</span>
+      Lesson Builder
+      <span class="sidebar-soon">Soon</span>
+    </div>
+    <div class="sidebar-item disabled">
+      <span class="material-symbols-outlined">cast</span>
+      Classroom Mode
+      <span class="sidebar-soon">Soon</span>
+    </div>
+    <div class="sidebar-item disabled">
+      <span class="material-symbols-outlined">bookmark</span>
+      My Saved Clips
+      <span class="sidebar-soon">Soon</span>
+    </div>
+    <div class="sidebar-item disabled">
+      <span class="material-symbols-outlined">edit_note</span>
+      Reflection Prompts
+      <span class="sidebar-soon">Soon</span>
+    </div>
+    <div class="sidebar-item disabled">
+      <span class="material-symbols-outlined">analytics</span>
+      Class Progress
+      <span class="sidebar-soon">Soon</span>
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-text">
+      Washington, D.C. Metro Area<br>
+      <a href="#">Change location</a> · Updated May 2026
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     MAIN AREA
+     ═══════════════════════════════════════════ -->
+<main class="main-area" id="mainArea">
+
+  <!-- VIEW: BROWSE -->
+  <div class="view active" id="viewBrowse">
+    <div class="browse-header">
+      <div class="bh-inner">
+        <div class="bh-columns">
+          <div class="bh-text">
+            <div class="bh-eyebrow">Government &amp; Politics — Unit 1: Foundation of American Self-Government</div>
+            <h1 class="bh-title">Civic Virtues in Your Community</h1>
+            <div class="bh-swoosh"></div>
+            <p class="bh-sub">Discover real examples of civic virtues from local government meetings near you. Browse curated video clips showing courage, justice, responsibility, and more — demonstrated by people in your community.</p>
+            <div class="bh-meta">
+              <div class="bh-meta-item"><span class="material-symbols-outlined">location_on</span> Washington, D.C. Metro Area</div>
+              <div class="bh-meta-item"><span class="material-symbols-outlined">play_circle</span> <span id="headerClipCount">12</span> clips</div>
+              <div class="bh-meta-item"><span class="material-symbols-outlined">schedule</span> Updated May 2026</div>
+            </div>
+          </div>
+          <div class="bh-map-wrap">
+            <div class="bh-map">
+              <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="hmWater" x1="0" y1="0" x2="0.5" y2="1">
+                    <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+                    <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
+                  </linearGradient>
+                </defs>
+                <!-- Potomac -->
+                <path d="M 165 0 Q 180 55 170 110 Q 164 150 192 220" stroke="url(#hmWater)" stroke-width="14" fill="none"/>
+                <path d="M 188 125 Q 250 140 310 132" stroke="url(#hmWater)" stroke-width="8" fill="none"/>
+                <!-- Region labels — larger -->
+                <text x="80" y="60" font-family="Libre Franklin" font-size="13" font-weight="700" fill="rgba(255,255,255,0.22)" text-anchor="middle">FAIRFAX</text>
+                <text x="80" y="75" font-family="Libre Franklin" font-size="10" font-weight="500" fill="rgba(255,255,255,0.15)" text-anchor="middle">COUNTY</text>
+                <text x="85" y="140" font-family="Libre Franklin" font-size="12" font-weight="700" fill="rgba(255,255,255,0.22)" text-anchor="middle">ARLINGTON</text>
+                <text x="72" y="185" font-family="Libre Franklin" font-size="12" font-weight="700" fill="rgba(255,255,255,0.22)" text-anchor="middle">ALEXANDRIA</text>
+                <text x="258" y="60" font-family="Libre Franklin" font-size="16" font-weight="800" fill="rgba(255,255,255,0.45)" text-anchor="middle">WASHINGTON</text>
+                <text x="258" y="80" font-family="Libre Franklin" font-size="16" font-weight="800" fill="rgba(255,255,255,0.45)" text-anchor="middle">D.C.</text>
+                <text x="355" y="100" font-family="Libre Franklin" font-size="11" font-weight="600" fill="rgba(255,255,255,0.18)" text-anchor="middle">PRINCE</text>
+                <text x="355" y="113" font-family="Libre Franklin" font-size="11" font-weight="600" fill="rgba(255,255,255,0.18)" text-anchor="middle">GEORGE'S</text>
+                <text x="330" y="35" font-family="Libre Franklin" font-size="11" font-weight="600" fill="rgba(255,255,255,0.18)" text-anchor="middle">MONTGOMERY CO.</text>
+                <!-- Clip location dots -->
+              </svg>
+            </div>
+            <a class="bh-map-link">
+              <span class="material-symbols-outlined">open_in_new</span>
+              Explore other areas
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="browse-content">
+      <!-- Recently Approved Timeline -->
+      <div class="timeline-section">
+        <div class="timeline-head">
+          <h3><span class="material-symbols-outlined">new_releases</span> Recently Approved Clips</h3>
+          <a class="tl-see-all">View all <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+        <div class="timeline-scroll-wrap">
+          <button class="tl-scroll-btn tl-scroll-left" onclick="scrollTimeline(-1)" id="tlScrollLeft">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <div class="timeline-strip" id="timelineStrip"></div>
+          <button class="tl-scroll-btn tl-scroll-right" onclick="scrollTimeline(1)" id="tlScrollRight">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Browse by Topic -->
+      <div class="topics-section">
+        <div class="topics-head">
+          <h3><span class="material-symbols-outlined">category</span> Browse by Topic</h3>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-card" onclick="doSearch('budget')">
+            <div class="topic-icon" style="background:#2980b9"><span class="material-symbols-outlined">payments</span></div>
+            <div class="topic-card-text"><h4>Budget &amp; Finance</h4><p>Spending, taxes, audits</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('safety')">
+            <div class="topic-icon" style="background:#c0392b"><span class="material-symbols-outlined">shield</span></div>
+            <div class="topic-card-text"><h4>Public Safety</h4><p>Police, fire, emergency</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('education')">
+            <div class="topic-icon" style="background:#27ae60"><span class="material-symbols-outlined">school</span></div>
+            <div class="topic-card-text"><h4>Education</h4><p>Schools, boards, policy</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('zoning')">
+            <div class="topic-icon" style="background:#8e44ad"><span class="material-symbols-outlined">location_city</span></div>
+            <div class="topic-card-text"><h4>Zoning &amp; Land Use</h4><p>Development, permits</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('voting')">
+            <div class="topic-icon" style="background:#e67e22"><span class="material-symbols-outlined">how_to_vote</span></div>
+            <div class="topic-card-text"><h4>Elections &amp; Voting</h4><p>Ballots, access, districts</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('health')">
+            <div class="topic-icon" style="background:#16a085"><span class="material-symbols-outlined">health_and_safety</span></div>
+            <div class="topic-card-text"><h4>Public Health</h4><p>Services, clinics, policy</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('housing')">
+            <div class="topic-icon" style="background:#d35400"><span class="material-symbols-outlined">house</span></div>
+            <div class="topic-card-text"><h4>Housing</h4><p>Affordable, zoning, rent</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('transportation')">
+            <div class="topic-icon" style="background:#1a5276"><span class="material-symbols-outlined">directions_bus</span></div>
+            <div class="topic-card-text"><h4>Transportation</h4><p>Transit, roads, bikes</p></div>
+          </div>
+          <div class="topic-card" onclick="doSearch('environment')">
+            <div class="topic-icon" style="background:#2ecc71"><span class="material-symbols-outlined">park</span></div>
+            <div class="topic-card-text"><h4>Environment</h4><p>Parks, water, climate</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="results" id="resultsInfo">Showing <strong>12</strong> clips across <strong>9</strong> virtues</div>
+        <select><option>Sort by: Relevance</option><option>Sort by: Most Recent</option><option>Sort by: Duration</option></select>
+      </div>
+      <div id="clipContainer"></div>
+    </div>
+  </div>
+
+  <!-- VIEW: CLIP DETAIL -->
+  <div class="view" id="viewDetail">
+    <div class="detail-layout">
+      <div class="detail-main">
+        <div class="detail-video">
+          <div class="play-btn"><span class="material-symbols-outlined">play_arrow</span></div>
+          <button class="detail-back" onclick="showBrowse()">
+            <span class="material-symbols-outlined">arrow_back</span> Back to clips
+          </button>
+          <div class="detail-video-overlay">
+            <div class="dvo-jur" id="dJur"><span class="material-symbols-outlined">location_on</span><span id="dJurText"></span></div>
+            <div class="dvo-title" id="dTitle"></div>
+            <div class="dvo-meta">
+              <div class="dvo-meta-item"><span class="material-symbols-outlined">calendar_today</span><span id="dDate"></span></div>
+              <div class="dvo-meta-item"><span class="material-symbols-outlined">schedule</span><span id="dDur"></span></div>
+              <div class="dvo-meta-item"><span class="material-symbols-outlined">groups</span><span id="dBody"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="detail-body">
+          <div class="detail-tags" id="dTags"></div>
+          <p class="detail-desc" id="dDesc"></p>
+          <div class="callouts" id="dCallouts"></div>
+          <div class="transcript-section">
+            <div class="transcript-panel">
+              <div class="transcript-panel-head">
+                <div class="transcript-panel-title">
+                  <span class="material-symbols-outlined">description</span>
+                  Transcript Excerpt
+                </div>
+                <div class="transcript-lang-tabs">
+                  <button class="transcript-lang-tab active">English</button>
+                  <button class="transcript-lang-tab disabled">Español</button>
+                </div>
+              </div>
+              <div class="transcript-panel-body" id="dTranscript"></div>
+              <div class="audio-player">
+                <button class="audio-play-btn" onclick="toggleAudio()" id="audioPlayBtn">
+                  <span class="material-symbols-outlined">play_arrow</span>
+                </button>
+                <div class="audio-progress">
+                  <div class="audio-bar-wrap" onclick="seekAudio(event)">
+                    <div class="audio-bar" id="audioBar"></div>
+                  </div>
+                  <div class="audio-times">
+                    <span id="audioCurrentTime">0:00</span>
+                    <span id="audioDuration">0:00</span>
+                  </div>
+                </div>
+                <div class="audio-label">
+                  <span class="material-symbols-outlined">record_voice_over</span>
+                  AI Narration
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inquiry-section">
+            <h3><span class="material-symbols-outlined">psychology</span> Guided Inquiry — Classroom Discussion</h3>
+            <ul class="inquiry-list" id="dInquiry"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="detail-sidebar-right">
+        <div class="rec-heading">Recommended Clips</div>
+        <div id="dRecommended"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW: SEARCH -->
+  <div class="view" id="viewSearch">
+    <div class="search-header">
+      <div class="search-query-display" id="searchQueryDisplay">
+        Results for "<span id="searchQueryText"></span>"
+      </div>
+      <div class="search-result-count" id="searchResultCount"></div>
+      <div class="search-filters">
+        <div class="search-filter-row">
+          <span class="search-filter-label">Virtue</span>
+          <div id="searchVirtueChips"></div>
+        </div>
+        <div class="search-filter-row">
+          <span class="search-filter-label">Topic</span>
+          <button class="search-chip active" data-topic="all" onclick="filterSearchTopic('all')">All Topics</button>
+          <button class="search-chip" data-topic="budget" onclick="filterSearchTopic('budget')"><span class="material-symbols-outlined">payments</span> Budget &amp; Finance</button>
+          <button class="search-chip" data-topic="safety" onclick="filterSearchTopic('safety')"><span class="material-symbols-outlined">shield</span> Public Safety</button>
+          <button class="search-chip" data-topic="education" onclick="filterSearchTopic('education')"><span class="material-symbols-outlined">school</span> Education</button>
+          <button class="search-chip" data-topic="zoning" onclick="filterSearchTopic('zoning')"><span class="material-symbols-outlined">location_city</span> Zoning &amp; Land Use</button>
+          <button class="search-chip" data-topic="elections" onclick="filterSearchTopic('elections')"><span class="material-symbols-outlined">how_to_vote</span> Elections &amp; Voting</button>
+          <button class="search-chip" data-topic="health" onclick="filterSearchTopic('health')"><span class="material-symbols-outlined">health_and_safety</span> Public Health</button>
+          <button class="search-chip" data-topic="housing" onclick="filterSearchTopic('housing')"><span class="material-symbols-outlined">house</span> Housing</button>
+          <button class="search-chip" data-topic="transit" onclick="filterSearchTopic('transit')"><span class="material-symbols-outlined">directions_bus</span> Transportation</button>
+        </div>
+      </div>
+    </div>
+    <div class="search-content">
+      <div class="search-suggestions" id="searchSuggestions">
+        <div class="search-suggestions-title">
+          <span class="material-symbols-outlined">auto_awesome</span>
+          Try searching for
+        </div>
+        <div class="search-suggest-chips">
+          <button class="search-suggest-chip" onclick="doSearch('public comment')"><span class="material-symbols-outlined">forum</span> public comment</button>
+          <button class="search-suggest-chip" onclick="doSearch('budget hearing')"><span class="material-symbols-outlined">payments</span> budget hearing</button>
+          <button class="search-suggest-chip" onclick="doSearch('zoning variance')"><span class="material-symbols-outlined">location_city</span> zoning variance</button>
+          <button class="search-suggest-chip" onclick="doSearch('school board')"><span class="material-symbols-outlined">school</span> school board</button>
+          <button class="search-suggest-chip" onclick="doSearch('voting rights')"><span class="material-symbols-outlined">how_to_vote</span> voting rights</button>
+          <button class="search-suggest-chip" onclick="doSearch('police oversight')"><span class="material-symbols-outlined">shield</span> police oversight</button>
+          <button class="search-suggest-chip" onclick="doSearch('community meeting')"><span class="material-symbols-outlined">groups</span> community meeting</button>
+          <button class="search-suggest-chip" onclick="doSearch('city council')"><span class="material-symbols-outlined">account_balance</span> city council</button>
+          <button class="search-suggest-chip" onclick="doSearch('affordable housing')"><span class="material-symbols-outlined">house</span> affordable housing</button>
+          <button class="search-suggest-chip" onclick="doSearch('disability access')"><span class="material-symbols-outlined">accessible</span> disability access</button>
+        </div>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+/* ═══════════════════════════════════════════
+   DATA
+   ═══════════════════════════════════════════ */
+const V = [
+  { key:'courage', label:'Courage', color:'#c0392b', icon:'shield', def:'The ability to take constructive action in the face of fear or danger. To stand firm as a person of character and do what is right, especially when it is unpopular or puts one at risk.' },
+  { key:'honor', label:'Honor', color:'#8e44ad', icon:'military_tech', def:'Demonstrating good character and being trustworthy.' },
+  { key:'humility', label:'Humility', color:'#2980b9', icon:'self_improvement', def:"A recognition that one's ignorance is far greater than one's knowledge. Putting others ahead of ourselves in thought, word, and deed." },
+  { key:'integrity', label:'Integrity', color:'#27ae60', icon:'verified', def:"To tell the truth, expose untruths, and keep one's promises." },
+  { key:'justice', label:'Justice', color:'#e67e22', icon:'balance', def:'Upholding of what is fair and right. Standing for equally applied rules and making sure everyone obeys them.' },
+  { key:'moderation', label:'Moderation', color:'#16a085', icon:'tune', def:'Exercising self-control and restraint. Finding the right balance and avoiding extremes.' },
+  { key:'prudence', label:'Prudence', color:'#5b7a9d', icon:'visibility', def:'Practical wisdom that applies reason and other virtues to discern right courses of action in specific situations.' },
+  { key:'respect', label:'Respect', color:'#d35400', icon:'handshake', def:'Regard for and defending the equal rights and inherent dignity of all human beings, including oneself.' },
+  { key:'responsibility', label:'Responsibility', color:'#1a5276', icon:'task_alt', def:"Acting on good judgment about what is right or wrong even when it is not popular. Taking care of oneself, one's family, and fellow citizens." }
+];
+
+const C = [
+  { id:1, v:'courage', p:['consent of the governed'], title:'Resident Challenges Zoning Decision Despite Pushback', jur:'D.C. ANC 4B', body:'ANC 4B Public Meeting', date:'Mar 14, 2026', dur:'3:42',
+    desc:'A longtime resident stands before the commission to challenge a controversial zoning variance, facing vocal opposition from developers and neighbors. Despite visible nervousness, she presents her case and refuses to yield.',
+    why:'This clip shows civic courage in action — an ordinary citizen choosing to speak up when it would have been easier to stay silent.',
+    watch:'Notice the moment when the audience pushes back. Watch how the speaker acknowledges the pressure but continues with her evidence.',
+    connect:'Think about a time when you disagreed with a popular decision. What made it hard to speak up?',
+    evidence:'"I know this isn\'t popular, but I\'ve lived here for 34 years and I have a responsibility to say what I believe is true — even when it makes people uncomfortable."',
+    transcript:'<span class="transcript-speaker">Commissioner Davis</span> <span class="transcript-time">[12:34]</span>: Next we have public comment on the proposed zoning variance for the lot on Georgia Avenue.<br><br><span class="transcript-speaker">Margaret Chen</span> <span class="transcript-time">[12:35]</span>: Thank you, Commissioner. My name is Margaret Chen and I\'ve lived on Ninth Street for 34 years. I know this isn\'t popular, but I have a responsibility to say what I believe is true — even when it makes people uncomfortable.<br><br><span class="transcript-speaker">Margaret Chen</span> <span class="transcript-time">[12:36]</span>: The variance being proposed would allow a building that exceeds the neighborhood plan by three stories. I\'ve reviewed the comprehensive plan, and this directly contradicts what we agreed to in 2019.',
+    inq:[{ph:'Observe',q:'What is the civic context? What decision is being debated?'},{ph:'Observe',q:'What specific risks does the speaker face by speaking?'},{ph:'Identify',q:'Which civic virtue(s) do you see? What is your evidence?'},{ph:'Justify',q:'How does this fit BRI\'s definition of courage: "to stand firm and do what is right, especially when it is unpopular"?'},{ph:'Reflect',q:'What might have happened if this resident chose not to speak?'}]
+  },
+  { id:2, v:'courage', p:['liberty'], title:'Council Member Votes Against Party on Civil Liberties', jur:'D.C. City Council', body:'Council Legislative Session', date:'Feb 28, 2026', dur:'4:15',
+    desc:'A council member breaks with their caucus to vote against a surveillance measure, citing constitutional concerns. They explain their reasoning knowing it will cost political support.',
+    why:'Elected officials face enormous pressure to vote with their party. This shows civic courage at the institutional level.',
+    watch:'Listen for how the council member acknowledges the political cost of their vote.',
+    connect:'Have you ever had to disagree with a group of friends? How did you decide?',
+    evidence:'"I will be voting no today, and I expect that will have consequences within my caucus. But I did not run for this office to be popular."',
+    transcript:'<span class="transcript-speaker">Council Member Williams</span> <span class="transcript-time">[2:14:30]</span>: Mr. Chairman, I rise to explain my vote. I will be voting no today, and I expect that will have consequences within my caucus. But I did not run for this office to be popular — I ran to protect the rights of the people who sent me here.',
+    inq:[{ph:'Observe',q:'What is the political context? Why is this vote significant?'},{ph:'Observe',q:'What specific risk does the council member identify?'},{ph:'Identify',q:'Is this courage, integrity, or both? Explain.'},{ph:'Justify',q:'How does this connect to the founding principle of liberty?'},{ph:'Reflect',q:'Should elected officials always follow conscience over voters? Why or why not?'}]
+  },
+  { id:3, v:'justice', p:['due process','equality'], title:'Board Ensures Equal Hearing Time for All Speakers', jur:'Arlington County Board', body:'County Board Meeting', date:'Apr 2, 2026', dur:'2:58',
+    desc:'When a well-connected developer tries to extend their presentation, the board chair firmly enforces equal speaking rules, ensuring a small business owner gets the same opportunity.',
+    why:'Justice in civic life often looks like fair procedures applied equally. This shows how procedural fairness protects less powerful voices.',
+    watch:'Watch how the chair handles the developer\'s request. Notice the reaction of the small business owner who speaks next.',
+    connect:'Are there times when rules at your school are applied differently depending on who you are?',
+    evidence:'"The rules apply to everyone at this podium equally — three minutes, no exceptions. That\'s how we ensure every voice in this county has the same weight."',
+    transcript:'<span class="transcript-speaker">Chair Martinez</span> <span class="transcript-time">[45:12]</span>: Mr. Harrison, your three minutes have concluded.<br><br><span class="transcript-speaker">Developer Harrison</span> <span class="transcript-time">[45:15]</span>: Chair Martinez, if I could just have two more minutes—<br><br><span class="transcript-speaker">Chair Martinez</span> <span class="transcript-time">[45:18]</span>: The rules apply to everyone at this podium equally — three minutes, no exceptions.',
+    inq:[{ph:'Observe',q:'Who are the parties involved? What are their interests?'},{ph:'Observe',q:'What action does the board chair take?'},{ph:'Identify',q:'How does this demonstrate justice? Could it also show another virtue?'},{ph:'Justify',q:'How does enforcing equal speaking time connect to due process and equality?'},{ph:'Reflect',q:'Why is procedural fairness important even when it means cutting off valuable information?'}]
+  },
+  { id:4, v:'justice', p:['rule of law'], title:'Advocate Pushes for Accessible Polling Locations', jur:'Montgomery County Board of Elections', body:'Board of Elections Hearing', date:'Jan 19, 2026', dur:'3:20',
+    desc:'A disability rights advocate presents data showing polling locations fail ADA requirements, asking the board to ensure equal access for all voters.',
+    why:'Justice requires that civic participation is accessible to everyone. This advocate holds government accountable to its own laws.',
+    watch:'Notice how the advocate uses specific data and legal standards rather than emotional appeals.',
+    connect:'What barriers to participation exist in your school or community?',
+    evidence:'"Seven of our 42 polling locations have steps without ramps, no accessible voting machines, or inadequate signage. These aren\'t preferences — these are legal requirements."',
+    transcript:'<span class="transcript-speaker">Sarah Okonkwo</span> <span class="transcript-time">[23:45]</span>: Members of the board, I\'m Sarah Okonkwo with the Montgomery County Disability Rights Coalition. Seven of our 42 polling locations have steps without ramps. These aren\'t preferences — these are legal requirements that protect every citizen\'s right to vote.',
+    inq:[{ph:'Observe',q:'What civic institution is involved? What authority do they have?'},{ph:'Observe',q:'What evidence does the advocate present?'},{ph:'Identify',q:'Which virtue and principle(s) are demonstrated?'},{ph:'Justify',q:'How does this illustrate the relationship between justice and rule of law?'},{ph:'Reflect',q:'What responsibility do citizens have to hold government accountable?'}]
+  },
+  { id:5, v:'responsibility', p:['republic'], title:'Parent Organizes School Safety Walkthrough', jur:'D.C. Public Schools — Ward 7', body:'Ward 7 Community Ed Meeting', date:'Mar 22, 2026', dur:'4:02',
+    desc:'Rather than just complaining about unsafe conditions near her children\'s school, a parent coordinates with city agencies, organizes a community walkthrough, and presents an action plan.',
+    why:'Responsibility means going beyond identifying problems to actively working on solutions.',
+    watch:'Notice how the parent shifts from describing the problem to presenting a plan.',
+    connect:'When you see a problem in your neighborhood, what do you do? What would it look like to take responsibility?',
+    evidence:'"I could have just called 311 again. But I realized that if I want my children to grow up safe, I need to do more than complain — I need to organize."',
+    transcript:'<span class="transcript-speaker">Diana Reyes</span> <span class="transcript-time">[1:05:20]</span>: My name is Diana Reyes, and my two children attend Hendley Elementary. I could have just called 311 again. But I realized that if I want my children to grow up safe, I need to do more than complain — I need to organize.',
+    inq:[{ph:'Observe',q:'What problem is being addressed? Who is involved?'},{ph:'Observe',q:'What actions did this parent take beyond reporting?'},{ph:'Identify',q:'Why is this civic responsibility, not just good parenting?'},{ph:'Justify',q:'How does this connect to the idea of a republic?'},{ph:'Reflect',q:'How might organizing like this be unpopular? Why does it matter?'}]
+  },
+  { id:6, v:'responsibility', p:['consent of the governed'], title:'Commissioner Admits Error and Reverses Vote', jur:'D.C. ANC 6A', body:'ANC 6A Regular Meeting', date:'Apr 10, 2026', dur:'2:45',
+    desc:'A commissioner publicly acknowledges that a previous vote was taken without proper community input, apologizes, and moves to reconsider with a new public comment period.',
+    why:'Taking responsibility for mistakes — especially public ones — requires both courage and humility.',
+    watch:'Listen for how the commissioner frames their admission. Do they deflect or take ownership?',
+    connect:'Think about a time you made a mistake that affected others. What did it take to admit it?',
+    evidence:'"We voted on the liquor license renewal without opening public comment. That was wrong. I take responsibility for that oversight."',
+    transcript:'<span class="transcript-speaker">Commissioner Park</span> <span class="transcript-time">[32:10]</span>: We voted on the liquor license renewal without opening public comment. That was wrong. I take responsibility for that oversight, and I\'m moving to reconsider.',
+    inq:[{ph:'Observe',q:'What mistake was made? What are its civic implications?'},{ph:'Observe',q:'What actions does the commissioner take to correct it?'},{ph:'Identify',q:'Which virtues are demonstrated? Responsibility AND humility?'},{ph:'Justify',q:'How does holding a new public comment connect to consent of the governed?'},{ph:'Reflect',q:'Why is it important for officials to publicly admit mistakes?'}]
+  },
+  { id:7, v:'integrity', p:['rule of law'], title:'Inspector General Reports Uncomfortable Audit Findings', jur:'D.C. Office of Inspector General', body:'D.C. Council Oversight Hearing', date:'Feb 5, 2026', dur:'3:55',
+    desc:'The inspector general presents findings implicating a popular city program in financial mismanagement, refusing to soften findings despite political pressure.',
+    why:'Integrity requires telling the truth even when it is inconvenient — keeping the promise of honest, independent oversight.',
+    watch:'Notice whether the inspector general editorializes or sticks to facts.',
+    connect:'Have you ever had to share bad news honestly when it would have been easier to soften it?',
+    evidence:'"My obligation is to report what we found, not what anyone wishes we had found."',
+    transcript:'<span class="transcript-speaker">Inspector General Thompson</span> <span class="transcript-time">[1:42:15]</span>: My obligation is to report what we found, not what anyone wishes we had found. The data shows a $2.3 million discrepancy that cannot be explained by the documentation provided.',
+    inq:[{ph:'Observe',q:'What is the inspector general\'s role? Why does independence matter?'},{ph:'Observe',q:'What pressure is she facing? How does she respond?'},{ph:'Identify',q:'How does this demonstrate "telling the truth, exposing untruths, and keeping promises"?'},{ph:'Justify',q:'How does honest reporting connect to rule of law?'},{ph:'Reflect',q:'What happens to public trust when officials routinely soften findings?'}]
+  },
+  { id:8, v:'humility', p:['consent of the governed'], title:'Mayor Invites Community Expertise on Budget', jur:'City of Alexandria, VA', body:'City Council Budget Session', date:'Mar 30, 2026', dur:'3:10',
+    desc:'The mayor pauses a budget presentation to acknowledge the council lacks expertise on a health issue, and invites community health workers to present before any votes.',
+    why:'Humility in leadership means recognizing the limits of your own knowledge and elevating community expertise.',
+    watch:'Watch for the moment the mayor pauses the formal process. What does it signal when a leader says "we don\'t know enough"?',
+    connect:'Think about a group project where one person took over. How would asking for others\' expertise have changed things?',
+    evidence:'"Frankly, we don\'t have the expertise at this table to make this decision well. Ms. Adeyemi, would you walk us through what you\'re seeing on the ground?"',
+    transcript:'<span class="transcript-speaker">Mayor Franklin</span> <span class="transcript-time">[2:30:05]</span>: I\'m going to pause us here because, frankly, we don\'t have the expertise at this table to make this decision well. Ms. Adeyemi, would you and your team walk us through what you\'re seeing on the ground?',
+    inq:[{ph:'Observe',q:'What is the mayor doing that is unusual for someone in authority?'},{ph:'Observe',q:'How does the room respond?'},{ph:'Identify',q:'How does this show humility: "recognition that one\'s ignorance is far greater than one\'s knowledge"?'},{ph:'Justify',q:'How does inviting expertise connect to consent of the governed?'},{ph:'Reflect',q:'Why might humility be hardest for leaders? What are the risks and rewards?'}]
+  },
+  { id:9, v:'honor', p:['republic'], title:'Outgoing Board Member Mentors Successor Across Party Lines', jur:'Fairfax County Board of Supervisors', body:'Board Transition Meeting', date:'Jan 8, 2026', dur:'2:30',
+    desc:'A retiring board member from one party publicly commits to mentoring the incoming member from the opposing party, emphasizing duty over partisanship.',
+    why:'Honor means demonstrating good character even toward political opponents. Civic duty transcends partisan loyalty.',
+    watch:'Listen to how the outgoing member speaks about their successor. Is there any hint of partisanship?',
+    connect:'Have you ever helped someone succeed who might compete with you?',
+    evidence:'"The people of this district didn\'t elect a party — they elected a person to serve them."',
+    transcript:'<span class="transcript-speaker">Supervisor Richardson</span> <span class="transcript-time">[15:42]</span>: The people of this district didn\'t elect a party — they elected a person to serve them. I intend to make sure my successor has every advantage I can give them.',
+    inq:[{ph:'Observe',q:'What is the political context? What is unusual here?'},{ph:'Observe',q:'What specific actions does the outgoing member take?'},{ph:'Identify',q:'How does this demonstrate "good character and being trustworthy"?'},{ph:'Justify',q:'How does generous transition of power connect to the idea of a republic?'},{ph:'Reflect',q:'What makes this behavior rare in today\'s political climate?'}]
+  },
+  { id:10, v:'respect', p:['equality'], title:'Chair Ensures Non-English Speaker is Fully Heard', jur:'Prince George\'s County Council', body:'County Council Public Hearing', date:'Apr 18, 2026', dur:'3:35',
+    desc:'When a Spanish-speaking resident begins to testify, the council chair stops proceedings to arrange a translator, extends speaking time, and asks the audience to be patient.',
+    why:'Respect means defending the inherent dignity of all people, including their right to participate regardless of language.',
+    watch:'Watch how the chair addresses both the speaker and the audience. What signals does she send about whose voice matters?',
+    connect:'Think about someone in your community who faces barriers to being heard. What could you do?',
+    evidence:'"Mrs. Gutierrez has every right to be heard in this chamber. That is what respect looks like in a democracy."',
+    transcript:'<span class="transcript-speaker">Chair Johnson</span> <span class="transcript-time">[1:12:30]</span>: Mrs. Gutierrez, we\'re going to get a translator. We\'ll extend your time.<br><br><span class="transcript-speaker">Chair Johnson</span> <span class="transcript-time">[1:12:45]</span>: Mrs. Gutierrez has every right to be heard in this chamber. That is what respect looks like in a democracy.',
+    inq:[{ph:'Observe',q:'What barrier to participation exists? How does the chair respond?'},{ph:'Observe',q:'What does the chair do beyond just arranging a translator?'},{ph:'Identify',q:'How does this show "regard for and defending the equal rights and inherent dignity of all"?'},{ph:'Justify',q:'How does ensuring participation connect to the principle of equality?'},{ph:'Reflect',q:'What other barriers prevent people from civic participation?'}]
+  },
+  { id:11, v:'prudence', p:['federalism'], title:'Committee Delays Vote to Study Long-Term Impact', jur:'D.C. Council — Finance Committee', body:'Committee on Finance Hearing', date:'Feb 20, 2026', dur:'4:10',
+    desc:'Despite pressure to approve a popular spending measure before an election, the committee chair requests a 30-day fiscal impact study, arguing that prudent governance requires understanding consequences.',
+    why:'Prudence is practical wisdom — making decisions based on reason rather than pressure.',
+    watch:'Listen to how the chair frames the delay. Does she oppose the measure, or support a better process?',
+    connect:'Have you ever made a decision too quickly and regretted it?',
+    evidence:'"Voting today without understanding the five-year fiscal impact would be irresponsible. Prudent governance means we owe our constituents better than a guess."',
+    transcript:'<span class="transcript-speaker">Chair Patel</span> <span class="transcript-time">[3:15:20]</span>: I support the goals of this measure. But voting today without understanding the five-year fiscal impact would be irresponsible. Prudent governance means we owe our constituents better than a guess.',
+    inq:[{ph:'Observe',q:'What pressure is the chair facing? Why is there urgency?'},{ph:'Observe',q:'How does she balance support for the measure with caution?'},{ph:'Identify',q:'How does this show "practical wisdom that applies reason to discern right action"?'},{ph:'Justify',q:'How does requesting a study before voting relate to governance in a republic?'},{ph:'Reflect',q:'When does caution become a virtue, and when might it become a vice?'}]
+  },
+  { id:12, v:'moderation', p:['checks and balances'], title:'Mediator De-escalates Heated Neighborhood Dispute', jur:'D.C. Office of Neighborhood Safety', body:'Community Mediation Session', date:'Mar 5, 2026', dur:'3:48',
+    desc:'When a dispute between two neighborhood groups becomes heated, a facilitator models moderation by acknowledging both sides, lowering the temperature, and redirecting toward shared interests.',
+    why:'Moderation isn\'t about being wishy-washy — it\'s about exercising self-control and finding balance when emotions run high.',
+    watch:'Notice what the facilitator does NOT do — she doesn\'t take sides or dismiss concerns.',
+    connect:'Think about a heated argument you\'ve witnessed. What could moderation have looked like?',
+    evidence:'"I hear two groups of people who both love this neighborhood. The problem is that we\'ve stopped listening to each other."',
+    transcript:'<span class="transcript-speaker">Facilitator Adams</span> <span class="transcript-time">[42:15]</span>: I hear two groups of people who both love this neighborhood. The problem is that we\'ve stopped listening to each other. Let\'s take a breath and start with what we agree on.',
+    inq:[{ph:'Observe',q:'What is the conflict? What caused it to escalate?'},{ph:'Observe',q:'What techniques does the facilitator use to de-escalate?'},{ph:'Identify',q:'How does this show "exercising self-control and finding the right balance"?'},{ph:'Justify',q:'Aristotle described virtue as a "golden mean." What would the extremes look like here?'},{ph:'Reflect',q:'When is compromise a virtue and when might it be a vice?'}]
+  }
+];
+
+// Placeholder clips — greyed out "coming soon" cards to fill the grid
+const PLACEHOLDERS = [
+  { v:'courage', title:'Teacher Defends Student Rights at Board Meeting', jur:'Loudoun County Schools', dur:'3:15' },
+  { v:'courage', title:'Small Business Owner Testifies on Permit Reform', jur:'D.C. Council', dur:'4:30' },
+  { v:'honor', title:'Fire Chief Credits Team After Emergency Response', jur:'Alexandria Fire Dept.', dur:'2:50' },
+  { v:'honor', title:'Council Member Returns Campaign Contribution', jur:'D.C. City Council', dur:'3:05' },
+  { v:'humility', title:'Commissioner Defers to Expert Testimony on Water Quality', jur:'Fairfax County', dur:'3:40' },
+  { v:'humility', title:'Board Chair Acknowledges Mistake in Previous Ruling', jur:'Arlington County', dur:'2:20' },
+  { v:'integrity', title:'Whistleblower Reports Safety Violations at Public Pool', jur:'Montgomery County', dur:'4:45' },
+  { v:'integrity', title:'Clerk Corrects Vote Count Error Before Certification', jur:'D.C. Board of Elections', dur:'2:55' },
+  { v:'justice', title:'Residents Push for Equitable Snow Removal Routes', jur:'D.C. DPW Hearing', dur:'3:30' },
+  { v:'moderation', title:'Neighbors Find Compromise on Noise Ordinance', jur:'Arlington County', dur:'4:10' },
+  { v:'moderation', title:'Budget Committee Balances Competing Priorities', jur:'D.C. Council Finance', dur:'3:55' },
+  { v:'prudence', title:'Health Board Delays Decision Pending Environmental Review', jur:'Prince George\'s Co.', dur:'4:20' },
+  { v:'prudence', title:'Planning Commission Requests Traffic Study Before Vote', jur:'Fairfax County', dur:'3:15' },
+  { v:'respect', title:'Council Creates Multilingual Outreach for Budget Process', jur:'Montgomery County', dur:'2:45' },
+  { v:'respect', title:'Board Adds Evening Sessions for Working Parents', jur:'D.C. Public Schools', dur:'3:00' },
+  { v:'responsibility', title:'Neighborhood Captain Launches Block Cleanup Initiative', jur:'D.C. Ward 5', dur:'2:35' },
+  { v:'responsibility', title:'Youth Council Presents Park Improvement Plan', jur:'Alexandria, VA', dur:'4:00' },
+];
+
+/* ═══════════════════════════════════════════
+   BUILD SIDEBAR
+   ═══════════════════════════════════════════ */
+function buildSidebar() {
+  const el = document.getElementById('sidebarVirtues');
+  V.forEach(v => {
+    const count = C.filter(c => c.v === v.key).length;
+    const btn = document.createElement('button');
+    btn.className = 'sidebar-item';
+    btn.dataset.virtue = v.key;
+    btn.innerHTML = `
+      <div class="sidebar-virtue-dot" style="background:${v.color}"></div>
+      ${v.label}
+      <span class="si-count">${count}</span>`;
+    btn.onclick = () => filterVirtue(v.key);
+    el.appendChild(btn);
+  });
+}
+
+/* ═══════════════════════════════════════════
+   RENDER BROWSE VIEW
+   ═══════════════════════════════════════════ */
+function renderBrowse(clips) {
+  const container = document.getElementById('clipContainer');
+  container.innerHTML = '';
+  if (!clips.length && !PLACEHOLDERS.length) {
+    container.innerHTML = '<div class="empty-state"><span class="material-symbols-outlined">search_off</span><h3>No clips found</h3><p>Try adjusting your filters or search.</p></div>';
+    return;
+  }
+  const active = getActiveVirtue();
+  const grouped = {};
+  const groupedPH = {};
+  if (active === 'all') {
+    V.forEach(v => { grouped[v.key] = []; groupedPH[v.key] = []; });
+    clips.forEach(c => { if(grouped[c.v]) grouped[c.v].push(c); });
+    PLACEHOLDERS.forEach(p => { if(groupedPH[p.v]) groupedPH[p.v].push(p); });
+  } else {
+    grouped[active] = clips;
+    groupedPH[active] = PLACEHOLDERS.filter(p => p.v === active);
+  }
+  Object.entries(grouped).forEach(([vk, vc]) => {
+    const ph = groupedPH[vk] || [];
+    if (!vc.length && !ph.length) return;
+    const vd = V.find(v=>v.key===vk);
+    const totalCount = vc.length + ph.length;
+    const sec = document.createElement('div');
+    sec.className = 'virtue-section';
+    sec.innerHTML = `
+      <div class="virtue-sec-head">
+        <div class="vs-icon" style="background:${vd.color}"><span class="material-symbols-outlined">${vd.icon}</span></div>
+        <div class="vs-text"><h2>${vd.label}</h2><p>${vd.def}</p></div>
+        <div class="vs-count">${vc.length} clip${vc.length!==1?'s':''}</div>
+      </div>
+      <div class="clip-grid">
+        ${vc.map(c=>cardHTML(c,vd)).join('')}
+        ${ph.map(p=>placeholderHTML(p,vd)).join('')}
+      </div>`;
+    container.appendChild(sec);
+  });
+  const virtueCount = active==='all' ? Object.values(grouped).filter((_,i)=> grouped[Object.keys(grouped)[i]].length || (groupedPH[Object.keys(groupedPH)[i]]||[]).length).length : 1;
+  document.getElementById('resultsInfo').innerHTML = `Showing <strong>${clips.length}</strong> clip${clips.length!==1?'s':''} across <strong>${virtueCount}</strong> virtue${virtueCount!==1?'s':''}`;
+}
+
+function cardHTML(c, vd) {
+  return `
+    <div class="clip-card fade-up" onclick="openClip(${c.id})">
+      <div class="clip-thumb">
+        <div class="play-btn"><span class="material-symbols-outlined">play_arrow</span></div>
+        <div class="clip-dur">${c.dur}</div>
+        <div class="clip-jur"><span class="material-symbols-outlined">location_on</span>${c.jur}</div>
+      </div>
+      <div class="clip-body">
+        <h3>${c.title}</h3>
+        <p>${c.desc}</p>
+        <div class="clip-tags">
+          <span class="clip-tag tag-v" style="background:${vd.color}">${vd.label}</span>
+          ${c.p.map(p=>`<span class="clip-tag tag-p">${p}</span>`).join('')}
+        </div>
+        <div class="clip-meta"><span class="material-symbols-outlined">calendar_today</span>${c.date}<span class="material-symbols-outlined">groups</span>${c.body}</div>
+      </div>
+    </div>`;
+}
+
+function placeholderHTML(p, vd) {
+  return `
+    <div class="clip-card placeholder fade-up">
+      <div class="clip-thumb">
+        <div class="play-btn"><span class="material-symbols-outlined">play_arrow</span></div>
+      </div>
+      <div class="clip-body">
+        <h3>&nbsp;</h3>
+        <p>&nbsp;<br>&nbsp;</p>
+        <div class="clip-tags">
+          <span class="clip-tag tag-v" style="background:${vd.color}">${vd.label}</span>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ═══════════════════════════════════════════
+   FILTERING
+   ═══════════════════════════════════════════ */
+function getActiveVirtue() {
+  const el = document.querySelector('.sidebar-item.active');
+  return el?.dataset?.virtue || 'all';
+}
+
+function filterVirtue(key) {
+  document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+  if (key === 'all') {
+    document.getElementById('navAll').classList.add('active');
+  } else {
+    document.querySelector(`.sidebar-item[data-virtue="${key}"]`)?.classList.add('active');
+  }
+  showBrowse();
+  applyFilters();
+}
+
+function applyFilters() {
+  const virtue = getActiveVirtue();
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
+  let filtered = [...C];
+  if (virtue !== 'all') filtered = filtered.filter(c => c.v === virtue);
+  if (search) filtered = filtered.filter(c =>
+    c.title.toLowerCase().includes(search) ||
+    c.desc.toLowerCase().includes(search) ||
+    c.jur.toLowerCase().includes(search) ||
+    c.body.toLowerCase().includes(search)
+  );
+  renderBrowse(filtered);
+}
+
+/* ═══════════════════════════════════════════
+   CLIP DETAIL VIEW
+   ═══════════════════════════════════════════ */
+function openClip(id) {
+  const c = C.find(x=>x.id===id);
+  if (!c) return;
+  const vd = V.find(v=>v.key===c.v);
+
+  document.getElementById('dTitle').textContent = c.title;
+  document.getElementById('dJurText').textContent = c.jur;
+  document.getElementById('dDate').textContent = c.date;
+  document.getElementById('dDur').textContent = c.dur;
+  document.getElementById('dBody').textContent = c.body;
+  document.getElementById('dDesc').textContent = c.desc;
+
+  document.getElementById('dTags').innerHTML = `
+    <span class="clip-tag tag-v" style="background:${vd.color}">${vd.label}</span>
+    ${c.p.map(p=>`<span class="clip-tag tag-p">${p}</span>`).join('')}`;
+
+  document.getElementById('dCallouts').innerHTML = `
+    <div class="co-box co-why"><h4><span class="material-symbols-outlined">lightbulb</span>Why It Matters</h4><p>${c.why}</p></div>
+    <div class="co-box co-watch"><h4><span class="material-symbols-outlined">visibility</span>What to Watch For</h4><p>${c.watch}</p></div>
+    <div class="co-box co-connect"><h4><span class="material-symbols-outlined">people</span>Connect to Your Life</h4><p>${c.connect}</p></div>
+    <div class="co-box co-evidence"><h4><span class="material-symbols-outlined">format_quote</span>Key Evidence</h4><p><em>${c.evidence}</em></p></div>`;
+
+  document.getElementById('dTranscript').innerHTML = c.transcript;
+
+  // Init audio player
+  initAudio(c.dur);
+
+  document.getElementById('dInquiry').innerHTML = c.inq.map((q,i) => `
+    <li class="inquiry-item">
+      <span class="iq-num">${i+1}</span>
+      <div><div class="iq-phase">${q.ph}</div>${q.q}</div>
+    </li>`).join('');
+
+  // Recommended clips — same virtue + other virtues, exclude current
+  const sameV = C.filter(x => x.v === c.v && x.id !== c.id);
+  const otherV = C.filter(x => x.v !== c.v).sort(() => Math.random()-0.5).slice(0,4);
+  const recs = [...sameV, ...otherV].slice(0,6);
+  document.getElementById('dRecommended').innerHTML = recs.map(r => {
+    const rv = V.find(v=>v.key===r.v);
+    return `
+      <div class="rec-card" onclick="openClip(${r.id})">
+        <div class="rec-thumb">
+          <span class="material-symbols-outlined">play_arrow</span>
+          <div class="rec-dur">${r.dur}</div>
+        </div>
+        <div class="rec-info">
+          <h4>${r.title}</h4>
+          <p>${r.jur} · ${r.date}</p>
+          <span class="rec-tag" style="background:${rv.color}">${rv.label}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('viewBrowse').classList.remove('active');
+  document.getElementById('viewDetail').classList.add('active');
+  document.getElementById('mainArea').scrollTop = 0;
+}
+
+/* ═══════════════════════════════════════════
+   SEARCH VIEW
+   ═══════════════════════════════════════════ */
+let searchTopicFilter = 'all';
+
+function handleSearchInput() {
+  const q = document.getElementById('searchInput').value.trim();
+  if (q.length >= 2) {
+    showSearchView(q);
+  } else if (q.length === 0) {
+    clearSearch();
+  }
+}
+
+function doSearch(term) {
+  document.getElementById('searchInput').value = term;
+  showSearchView(term);
+}
+
+function showSearchView(query) {
+  document.getElementById('viewBrowse').classList.remove('active');
+  document.getElementById('viewDetail').classList.remove('active');
+  document.getElementById('viewSearch').classList.add('active');
+
+  document.getElementById('searchQueryText').textContent = query;
+  searchTopicFilter = 'all';
+  // Reset topic chips
+  document.querySelectorAll('#viewSearch .search-chip[data-topic]').forEach(c => {
+    c.classList.toggle('active', c.dataset.topic === 'all');
+  });
+
+  // Build virtue filter chips
+  const virtueChipsEl = document.getElementById('searchVirtueChips');
+  if (!virtueChipsEl.children.length) {
+    let html = '<button class="search-chip active" data-sv="all" onclick="filterSearchVirtue(\'all\')">All</button>';
+    V.forEach(v => {
+      html += `<button class="search-chip" data-sv="${v.key}" onclick="filterSearchVirtue('${v.key}')">${v.label}</button>`;
+    });
+    virtueChipsEl.innerHTML = html;
+  }
+
+  renderSearchResults(query);
+  document.getElementById('mainArea').scrollTop = 0;
+}
+
+let searchVirtueFilter = 'all';
+function filterSearchVirtue(key) {
+  searchVirtueFilter = key;
+  document.querySelectorAll('#searchVirtueChips .search-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.sv === key);
+  });
+  const q = document.getElementById('searchInput').value.trim();
+  renderSearchResults(q);
+}
+
+function filterSearchTopic(topic) {
+  searchTopicFilter = topic;
+  document.querySelectorAll('#viewSearch .search-chip[data-topic]').forEach(c => {
+    c.classList.toggle('active', c.dataset.topic === topic);
+  });
+  const q = document.getElementById('searchInput').value.trim();
+  renderSearchResults(q);
+}
+
+function renderSearchResults(query) {
+  const ql = query.toLowerCase();
+  let results = C.filter(c =>
+    c.title.toLowerCase().includes(ql) ||
+    c.desc.toLowerCase().includes(ql) ||
+    c.jur.toLowerCase().includes(ql) ||
+    c.body.toLowerCase().includes(ql) ||
+    c.evidence.toLowerCase().includes(ql) ||
+    c.why.toLowerCase().includes(ql) ||
+    c.p.some(p => p.toLowerCase().includes(ql))
+  );
+  if (searchVirtueFilter !== 'all') {
+    results = results.filter(c => c.v === searchVirtueFilter);
+  }
+  // Topic filter is cosmetic for now since we don't have topic tags on clips yet
+  // But it shows the UI working
+
+  document.getElementById('searchResultCount').textContent =
+    `${results.length} clip${results.length !== 1 ? 's' : ''} found · ${C.length - results.length} more in full library`;
+
+  // Hide suggestions if we have results
+  document.getElementById('searchSuggestions').style.display = results.length > 0 ? 'none' : 'block';
+
+  const container = document.getElementById('searchResults');
+  if (!results.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <span class="material-symbols-outlined">search_off</span>
+        <h3>No clips match "${query}"</h3>
+        <p>Try different keywords or browse by virtue in the sidebar.</p>
+      </div>`;
+    document.getElementById('searchSuggestions').style.display = 'block';
+    return;
+  }
+
+  container.innerHTML = `<div class="clip-grid">${results.map(c => {
+    const vd = V.find(v => v.key === c.v);
+    return cardHTML(c, vd);
+  }).join('')}</div>`;
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  searchVirtueFilter = 'all';
+  searchTopicFilter = 'all';
+  document.getElementById('viewSearch').classList.remove('active');
+  document.getElementById('viewBrowse').classList.add('active');
+  applyFilters();
+}
+
+function showBrowse() {
+  document.getElementById('viewDetail').classList.remove('active');
+  document.getElementById('viewSearch').classList.remove('active');
+  document.getElementById('viewBrowse').classList.add('active');
+  document.getElementById('mainArea').scrollTop = 0;
+}
+
+/* ═══════════════════════════════════════════
+   TIMELINE — Recently Approved
+   ═══════════════════════════════════════════ */
+function renderTimeline() {
+  // Sort clips by date (most recent first), simulate "approved" dates
+  const approvedDates = [
+    { id:6, approved:'May 10, 2026' },
+    { id:10, approved:'May 9, 2026' },
+    { id:1, approved:'May 8, 2026' },
+    { id:12, approved:'May 7, 2026' },
+    { id:8, approved:'May 6, 2026' },
+    { id:7, approved:'May 5, 2026' },
+    { id:5, approved:'May 4, 2026' },
+    { id:3, approved:'May 3, 2026' },
+    { id:11, approved:'May 2, 2026' },
+    { id:9, approved:'May 1, 2026' },
+    { id:2, approved:'Apr 30, 2026' },
+    { id:4, approved:'Apr 29, 2026' },
+  ];
+  const strip = document.getElementById('timelineStrip');
+  strip.innerHTML = '';
+  let lastDay = '';
+  approvedDates.forEach((ad, i) => {
+    const clip = C.find(c => c.id === ad.id);
+    if (!clip) return;
+    const vd = V.find(v => v.key === clip.v);
+    const parts = ad.approved.split(' ');
+    const day = parts[1].replace(',','');
+    const month = parts[0].substring(0,3).toUpperCase();
+    const dayKey = month + day;
+    // Add date marker if new day
+    if (dayKey !== lastDay && i < 8) {
+      const isNew = i < 3;
+      strip.innerHTML += `
+        <div class="tl-date-marker">
+          <div class="tl-dm-month">${month}</div>
+          <div class="tl-dm-day">${day}</div>
+          ${isNew ? '<div style="font-size:8px;color:var(--teal);font-weight:700;margin-top:2px;">NEW</div>' : ''}
+        </div>`;
+      lastDay = dayKey;
+    }
+    if (i >= 8) return; // Only show 8 in strip
+    strip.innerHTML += `
+      <div class="tl-card" onclick="openClip(${clip.id})">
+        <div class="tl-card-thumb">
+          <span class="material-symbols-outlined">play_arrow</span>
+          <div class="tl-card-dur">${clip.dur}</div>
+          ${i < 2 ? '<div class="tl-card-new">New</div>' : ''}
+        </div>
+        <div class="tl-card-body">
+          <h4>${clip.title}</h4>
+          <div class="tl-meta"><span class="material-symbols-outlined">location_on</span>${clip.jur}</div>
+          <span class="tl-card-tag" style="background:${vd.color}">${vd.label}</span>
+        </div>
+      </div>`;
+  });
+}
+
+/* ═══════════════════════════════════════════
+   UNIT SELECTOR
+   ═══════════════════════════════════════════ */
+function toggleUnitDropdown() {
+  document.getElementById('unitDropdown').classList.toggle('open');
+}
+
+/* ═══════════════════════════════════════════
+   AUDIO PLAYER (simulated)
+   ═══════════════════════════════════════════ */
+let audioPlaying = false;
+let audioInterval = null;
+let audioProgress = 0;
+let audioDurationSec = 0;
+
+function initAudio(durationStr) {
+  // Parse "3:42" to seconds
+  const parts = durationStr.split(':');
+  audioDurationSec = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  audioProgress = 0;
+  audioPlaying = false;
+  if (audioInterval) clearInterval(audioInterval);
+  document.getElementById('audioBar').style.width = '0%';
+  document.getElementById('audioCurrentTime').textContent = '0:00';
+  document.getElementById('audioDuration').textContent = durationStr;
+  document.getElementById('audioPlayBtn').innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+}
+
+function toggleAudio() {
+  if (audioPlaying) {
+    audioPlaying = false;
+    clearInterval(audioInterval);
+    document.getElementById('audioPlayBtn').innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+  } else {
+    audioPlaying = true;
+    document.getElementById('audioPlayBtn').innerHTML = '<span class="material-symbols-outlined">pause</span>';
+    audioInterval = setInterval(() => {
+      audioProgress += 1;
+      if (audioProgress >= audioDurationSec) {
+        audioProgress = 0;
+        audioPlaying = false;
+        clearInterval(audioInterval);
+        document.getElementById('audioPlayBtn').innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+      }
+      const pct = (audioProgress / audioDurationSec) * 100;
+      document.getElementById('audioBar').style.width = pct + '%';
+      const min = Math.floor(audioProgress / 60);
+      const sec = audioProgress % 60;
+      document.getElementById('audioCurrentTime').textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
+    }, 1000);
+  }
+}
+
+function seekAudio(e) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audioProgress = Math.floor(pct * audioDurationSec);
+  document.getElementById('audioBar').style.width = (pct * 100) + '%';
+  const min = Math.floor(audioProgress / 60);
+  const sec = audioProgress % 60;
+  document.getElementById('audioCurrentTime').textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
+}
+
+function scrollTimeline(dir) {
+  const strip = document.getElementById('timelineStrip');
+  const scrollAmount = 520; // ~2 cards
+  strip.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+}
+
+/* ═══════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════ */
+buildSidebar();
+renderBrowse(C);
+renderTimeline();
+</script>
+</body>
+</html>
