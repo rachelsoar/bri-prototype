@@ -124,7 +124,7 @@ body {
 .topbar-unit-badge {
   background: var(--orange);
   color: #fff;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   padding: 3px 10px;
   border-radius: 4px;
@@ -133,7 +133,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   LEFT SIDEBAR
+   LEFT SIDEBAR — Light cream theme
    ═══════════════════════════════════════════ */
 .sidebar {
   position: fixed;
@@ -141,24 +141,25 @@ body {
   left: 0;
   bottom: 0;
   width: var(--sidebar-w);
-  background: var(--navy);
+  background: #f0ebe4;
+  border-right: 1px solid #ddd7ce;
   overflow-y: auto;
   z-index: 90;
   display: flex;
   flex-direction: column;
 }
 .sidebar::-webkit-scrollbar { width: 4px; }
-.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+.sidebar::-webkit-scrollbar-thumb { background: #ccc6bc; border-radius: 2px; }
 
 .sidebar-section {
   padding: 16px 16px 8px;
 }
 .sidebar-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.35);
+  color: #9a9489;
   margin-bottom: 8px;
   padding: 0 8px;
 }
@@ -173,20 +174,23 @@ body {
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255,255,255,0.7);
+  color: var(--fg-muted);
   border: none;
   background: none;
   width: 100%;
   text-align: left;
   font-family: 'Libre Franklin', sans-serif;
 }
-.sidebar-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
-.sidebar-item.active { background: rgba(255,255,255,0.12); color: #fff; }
+.sidebar-item:hover { background: rgba(28,51,97,0.06); color: var(--navy); }
+.sidebar-item.active { background: var(--navy); color: #fff; }
+.sidebar-item.active .si-count { background: rgba(255,255,255,0.2); color: #fff; }
+.sidebar-item.active .sidebar-virtue-dot { box-shadow: 0 0 0 2px rgba(255,255,255,0.4); }
 .sidebar-item .material-symbols-outlined { font-size: 20px; flex-shrink: 0; }
 .sidebar-item .si-count {
   margin-left: auto;
-  font-size: 11px;
-  background: rgba(255,255,255,0.1);
+  font-size: 12px;
+  background: rgba(28,51,97,0.08);
+  color: var(--fg-subtle);
   padding: 1px 7px;
   border-radius: 10px;
   font-weight: 600;
@@ -198,19 +202,19 @@ body {
 }
 .sidebar-divider {
   height: 1px;
-  background: rgba(255,255,255,0.08);
+  background: #ddd7ce;
   margin: 4px 16px;
 }
 
 /* Disabled / Coming Soon items */
 .sidebar-item.disabled {
-  opacity: 0.3;
+  opacity: 0.35;
   cursor: not-allowed;
   position: relative;
 }
-.sidebar-item.disabled:hover { background: none; color: rgba(255,255,255,0.3); }
+.sidebar-item.disabled:hover { background: none; color: var(--fg-muted); }
 .sidebar-soon {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   background: var(--orange);
   color: #fff;
@@ -222,7 +226,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   UNIT SELECTOR (top of sidebar)
+   UNIT SELECTOR (top of sidebar) — light
    ═══════════════════════════════════════════ */
 .unit-selector {
   padding: 14px 16px 10px;
@@ -232,15 +236,15 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: #fff;
+  border: 1px solid #ddd7ce;
   border-radius: 10px;
   cursor: pointer;
   transition: var(--t);
 }
 .unit-current:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.2);
+  border-color: var(--navy);
+  box-shadow: 0 2px 8px rgba(28,51,97,0.08);
 }
 .unit-current-icon {
   width: 34px; height: 34px;
@@ -254,37 +258,39 @@ body {
   flex: 1; min-width: 0;
 }
 .unit-current-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.4);
+  color: #9a9489;
   line-height: 1;
   margin-bottom: 2px;
 }
 .unit-current-name {
   font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  color: var(--navy);
   line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .unit-current-arrow {
-  color: rgba(255,255,255,0.35);
+  color: #9a9489;
   transition: var(--t);
 }
-.unit-current:hover .unit-current-arrow { color: rgba(255,255,255,0.6); }
+.unit-current:hover .unit-current-arrow { color: var(--navy); }
 .unit-current-arrow .material-symbols-outlined { font-size: 18px; }
 
-/* Unit dropdown */
+/* Unit dropdown — light */
 .unit-dropdown {
   display: none;
   margin-top: 6px;
-  background: rgba(0,0,0,0.25);
+  background: #fff;
+  border: 1px solid #ddd7ce;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .unit-dropdown.open { display: block; }
 .unit-option {
@@ -293,7 +299,7 @@ body {
   gap: 10px;
   padding: 8px 12px;
   font-size: 12px;
-  color: rgba(255,255,255,0.5);
+  color: var(--fg-muted);
   cursor: default;
   transition: var(--t);
   border: none;
@@ -303,8 +309,8 @@ body {
   font-family: 'Libre Franklin', sans-serif;
 }
 .unit-option.active-unit {
-  color: #fff;
-  background: rgba(255,255,255,0.08);
+  color: var(--navy);
+  background: rgba(28,51,97,0.05);
   font-weight: 600;
 }
 .unit-option.locked {
@@ -315,7 +321,7 @@ body {
   width: 22px; height: 22px;
   border-radius: 6px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   flex-shrink: 0;
 }
 .unit-option.active-unit .unit-num {
@@ -323,13 +329,13 @@ body {
   color: #fff;
 }
 .unit-option.locked .unit-num {
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.35);
+  background: #e8e4de;
+  color: #9a9489;
 }
 .unit-option .unit-lock {
   margin-left: auto;
   font-size: 14px;
-  color: rgba(255,255,255,0.2);
+  color: #ccc6bc;
 }
 .unit-browse-all {
   display: flex;
@@ -337,10 +343,10 @@ body {
   justify-content: center;
   gap: 4px;
   padding: 8px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  color: rgba(255,255,255,0.3);
-  border-top: 1px solid rgba(255,255,255,0.06);
+  color: #9a9489;
+  border-top: 1px solid #e8e4de;
   cursor: pointer;
   transition: var(--t);
   background: none;
@@ -350,19 +356,19 @@ body {
   width: 100%;
   font-family: 'Libre Franklin', sans-serif;
 }
-.unit-browse-all:hover { color: var(--orange-light); }
+.unit-browse-all:hover { color: var(--orange); }
 .unit-browse-all .material-symbols-outlined { font-size: 14px; }
 .sidebar-footer {
   margin-top: auto;
   padding: 16px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid #ddd7ce;
 }
 .sidebar-footer-text {
-  font-size: 11px;
-  color: rgba(255,255,255,0.3);
+  font-size: 12px;
+  color: #9a9489;
   line-height: 1.5;
 }
-.sidebar-footer-text a { color: var(--orange-light); text-decoration: none; }
+.sidebar-footer-text a { color: var(--navy); text-decoration: none; }
 
 /* ═══════════════════════════════════════════
    MAIN AREA
@@ -380,6 +386,186 @@ body {
    ═══════════════════════════════════════════ */
 .view { display: none; }
 .view.active { display: block; }
+
+/* ═══════════════════════════════════════════
+   VIEW: HOME (Dashboard)
+   ═══════════════════════════════════════════ */
+.home-welcome {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  padding: 32px 40px 28px;
+  color: #fff;
+  position: relative; overflow: hidden;
+}
+.home-welcome::after {
+  content: ''; position: absolute; top: -50%; right: -8%;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,119,0,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hw-inner { position: relative; z-index: 1; }
+.hw-greeting { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+.hw-title { font-family: 'Libre Baskerville', serif; font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+.hw-swoosh { display: inline-block; width: 44px; height: 3px; background: var(--orange); border-radius: 2px; margin-bottom: 8px; }
+.hw-sub { font-size: 14px; font-weight: 400; opacity: 0.6; }
+
+.home-content { padding: 28px 36px 60px; }
+
+/* Dashboard sections */
+.dash-section { margin-bottom: 28px; }
+.dash-section-head h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 14px;
+}
+.dash-section-head h3 .material-symbols-outlined { font-size: 20px; color: var(--orange); }
+
+/* Progress bar */
+.dash-progress { margin-bottom: 14px; }
+.dash-progress-bar {
+  height: 8px; background: var(--border-light); border-radius: 4px;
+  overflow: hidden; margin-bottom: 6px;
+}
+.dash-progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--navy), var(--navy-light));
+  border-radius: 4px; transition: width 0.5s ease;
+}
+.dash-progress-label { font-size: 13px; color: var(--fg-muted); }
+.dash-progress-label strong { color: var(--navy); }
+
+/* Lesson list */
+.dash-lessons {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.dash-lesson {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: 8px; font-size: 13px;
+  color: var(--fg-subtle);
+}
+.dash-lesson .material-symbols-outlined { font-size: 18px; }
+.dash-lesson.completed { color: var(--teal); }
+.dash-lesson.completed .material-symbols-outlined { color: var(--teal); }
+.dash-lesson.current {
+  background: rgba(28,51,97,0.06); color: var(--navy); font-weight: 600;
+  border: 1px solid rgba(28,51,97,0.1);
+}
+.dash-lesson.current .material-symbols-outlined { color: var(--orange); }
+
+/* Quick actions */
+.dash-actions {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+.dash-action {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px;
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: var(--r-lg); cursor: pointer; transition: var(--t);
+  box-shadow: var(--shadow);
+}
+.dash-action:hover { border-color: var(--navy); box-shadow: var(--shadow-hover); }
+.dash-action .material-symbols-outlined { font-size: 24px; color: var(--navy); flex-shrink: 0; }
+.dash-action div { font-size: 13px; color: var(--fg-muted); line-height: 1.35; }
+.dash-action div strong { color: var(--fg); display: block; margin-bottom: 1px; }
+.dash-action.disabled { opacity: 0.4; cursor: not-allowed; }
+.dash-action.disabled:hover { border-color: var(--border-light); box-shadow: var(--shadow); }
+
+/* Stats row */
+.dash-stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.dash-stat-card {
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: var(--r-lg); padding: 18px; text-align: center;
+  box-shadow: var(--shadow);
+}
+.dsc-num { font-family: 'Libre Baskerville', serif; font-size: 32px; font-weight: 700; color: var(--navy); }
+.dsc-label { font-size: 12px; color: var(--fg-subtle); margin-top: 4px; }
+
+/* News items */
+.dash-news { display: flex; flex-direction: column; gap: 8px; }
+.dash-news-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 16px; background: var(--bg-card);
+  border: 1px solid var(--border-light); border-radius: var(--r);
+  font-size: 13px; color: var(--fg-muted); line-height: 1.45;
+}
+.dash-news-item .material-symbols-outlined { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+/* Browse section headers */
+.browse-section { margin-bottom: 28px; }
+.browse-section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.browse-section-head h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+}
+.browse-section-head h3 .material-symbols-outlined { font-size: 20px; color: var(--orange); }
+
+/* Topic pills (flat style) */
+.topic-pills {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.topic-pill {
+  padding: 7px 18px; border-radius: 20px;
+  font-size: 13px; font-weight: 500;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card); color: var(--fg-muted);
+  cursor: pointer; transition: var(--t);
+  font-family: 'Libre Franklin', sans-serif;
+  display: flex; align-items: center; gap: 6px;
+}
+.topic-pill:hover { border-color: var(--navy); color: var(--navy); }
+.topic-pill .material-symbols-outlined { font-size: 16px; }
+
+/* Featured clip */
+.featured-clip {
+  display: flex; gap: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--shadow);
+  margin-bottom: 8px; cursor: pointer; transition: var(--t);
+}
+.featured-clip:hover { box-shadow: var(--shadow-hover); border-color: var(--navy); }
+.fc-thumb {
+  width: 300px; min-height: 180px;
+  background: var(--navy-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative;
+}
+.fc-thumb .play-btn {
+  width: 52px; height: 52px;
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--t);
+}
+.featured-clip:hover .fc-thumb .play-btn { background: var(--orange); border-color: var(--orange); }
+.fc-thumb .play-btn .material-symbols-outlined { color: #fff; font-size: 26px; }
+.fc-badge {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--orange); color: #fff;
+  font-size: 12px; font-weight: 700;
+  padding: 3px 10px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 4px;
+}
+.fc-badge .material-symbols-outlined { font-size: 14px; }
+.fc-body { padding: 20px 24px 20px 0; display: flex; flex-direction: column; justify-content: center; }
+.fc-body h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.fc-body p { font-size: 14px; color: var(--fg-muted); line-height: 1.55; margin-bottom: 12px; }
+.fc-meta { font-size: 12px; color: var(--fg-subtle); display: flex; gap: 12px; align-items: center; }
+.fc-meta .material-symbols-outlined { font-size: 14px; }
+
+/* ═══════════════════════════════════════════
+   VIEW: BROWSE
+   ═══════════════════════════════════════════ */
 
 /* Browse Header */
 .browse-header {
@@ -400,7 +586,7 @@ body {
 }
 .bh-inner { position: relative; z-index: 1; max-width: 900px; }
 .bh-eyebrow {
-  font-size: 11px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--orange-light); margin-bottom: 6px;
 }
@@ -491,12 +677,12 @@ body {
 .clip-dur {
   position: absolute; bottom: 8px; right: 8px;
   background: rgba(0,0,0,0.7); color: #fff;
-  font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+  font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 4px;
 }
 .clip-jur {
   position: absolute; top: 8px; left: 8px;
   background: rgba(0,0,0,0.55); color: #fff;
-  font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 4px;
+  font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 4px;
   display: flex; align-items: center; gap: 4px;
 }
 .clip-jur .material-symbols-outlined { font-size: 13px; }
@@ -512,14 +698,14 @@ body {
 }
 .clip-tags { display: flex; gap: 4px; margin-top: 10px; flex-wrap: wrap; }
 .clip-tag {
-  font-size: 10px; font-weight: 700; padding: 2px 9px;
+  font-size: 12px; font-weight: 700; padding: 2px 9px;
   border-radius: 10px; text-transform: uppercase; letter-spacing: 0.03em;
 }
 .tag-v { color: #fff; }
 .tag-p { background: #e8ecf5; color: var(--navy); }
 .clip-meta {
   display: flex; align-items: center; gap: 10px;
-  margin-top: 8px; font-size: 11px; color: var(--fg-subtle);
+  margin-top: 8px; font-size: 12px; color: var(--fg-subtle);
 }
 .clip-meta .material-symbols-outlined { font-size: 13px; }
 
@@ -593,6 +779,35 @@ body {
 .detail-body { padding: 28px 32px 60px; max-width: 800px; }
 .detail-tags { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
 .detail-desc { font-size: 15px; color: var(--fg-muted); line-height: 1.65; margin-bottom: 24px; }
+
+/* Jump to section (clip-within-a-clip) */
+.clip-sections-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 32px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+}
+.csb-label {
+  font-size: 12px; font-weight: 700; color: var(--fg-subtle);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.csb-sections {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.csb-section {
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px; font-weight: 500; color: var(--fg-muted);
+  cursor: pointer; transition: var(--t);
+  background: none; font-family: 'Libre Franklin', sans-serif;
+}
+.csb-section:hover { border-color: var(--navy); color: var(--navy); }
+.csb-section.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.csb-section .material-symbols-outlined { font-size: 14px; }
+.csb-time { font-size: 12px; color: var(--fg-subtle); font-variant-numeric: tabular-nums; }
 
 /* Transcript — always visible, with language tabs and audio player */
 .transcript-section { margin-bottom: 24px; }
@@ -672,11 +887,11 @@ body {
 }
 .audio-times {
   display: flex; justify-content: space-between;
-  font-size: 11px; color: var(--fg-subtle);
+  font-size: 12px; color: var(--fg-subtle);
   font-weight: 500; font-variant-numeric: tabular-nums;
 }
 .audio-label {
-  font-size: 11px; color: var(--fg-subtle);
+  font-size: 12px; color: var(--fg-subtle);
   display: flex; align-items: center; gap: 4px;
   white-space: nowrap;
 }
@@ -689,7 +904,7 @@ body {
   border-left: 4px solid;
 }
 .co-box h4 {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.06em; margin-bottom: 5px;
   display: flex; align-items: center; gap: 5px;
 }
@@ -726,12 +941,12 @@ body {
 .iq-num {
   width: 24px; height: 24px; border-radius: 50%;
   background: var(--navy); color: #fff;
-  font-size: 11px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 2px;
 }
 .iq-phase {
-  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.06em; color: var(--orange); margin-bottom: 2px;
 }
 
@@ -762,18 +977,242 @@ body {
 .rec-dur {
   position: absolute; bottom: 3px; right: 3px;
   background: rgba(0,0,0,0.7); color: #fff;
-  font-size: 9px; font-weight: 600; padding: 1px 5px; border-radius: 3px;
+  font-size: 12px; font-weight: 600; padding: 1px 5px; border-radius: 3px;
 }
 .rec-info h4 {
   font-size: 12px; font-weight: 600; color: var(--fg);
   line-height: 1.35; margin-bottom: 3px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.rec-info p { font-size: 11px; color: var(--fg-subtle); }
+.rec-info p { font-size: 12px; color: var(--fg-subtle); }
 .rec-tag {
-  display: inline-block; font-size: 9px; font-weight: 700;
+  display: inline-block; font-size: 12px; font-weight: 700;
   padding: 1px 7px; border-radius: 8px; color: #fff;
   margin-top: 4px; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   PLACEHOLDER PAGES (coming soon tools)
+   ═══════════════════════════════════════════ */
+.placeholder-page {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-height: calc(100vh - var(--topbar-h));
+  padding: 60px 40px;
+  text-align: center;
+}
+.pp-icon {
+  width: 80px; height: 80px;
+  border-radius: 20px;
+  background: var(--border-light);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.pp-icon .material-symbols-outlined { font-size: 36px; color: var(--fg-subtle); }
+.pp-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px; font-weight: 700; color: var(--navy);
+  margin-bottom: 8px;
+}
+.pp-desc {
+  font-size: 15px; color: var(--fg-muted); max-width: 480px;
+  line-height: 1.6; margin-bottom: 24px;
+}
+.pp-badge {
+  background: var(--orange); color: #fff;
+  font-size: 12px; font-weight: 700;
+  padding: 6px 20px; border-radius: 20px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 32px;
+}
+.pp-preview-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 14px; max-width: 600px; width: 100%;
+}
+.pp-card {
+  height: 120px;
+  background: var(--border-light);
+  border-radius: var(--r-lg);
+  opacity: 0.4;
+}
+
+/* ═══════════════════════════════════════════
+   MAP / LOCATION PAGE
+   ═══════════════════════════════════════════ */
+.map-page { padding: 32px 36px 60px; }
+.map-page-header {
+  margin-bottom: 28px;
+}
+.map-page-header h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px; font-weight: 700; color: var(--navy);
+  margin-bottom: 6px;
+}
+.map-page-header p { font-size: 14px; color: var(--fg-muted); }
+.map-current-loc {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 2px solid var(--navy);
+  border-radius: var(--r-lg);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.map-current-loc .material-symbols-outlined { font-size: 28px; color: var(--navy); }
+.mcl-text h3 { font-size: 16px; font-weight: 700; color: var(--navy); }
+.mcl-text p { font-size: 13px; color: var(--fg-muted); }
+.mcl-badge {
+  margin-left: auto;
+  background: var(--teal); color: #fff;
+  font-size: 12px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px;
+}
+.map-svg-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+.map-svg-container svg { width: 100%; display: block; }
+.map-region-label {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  fill: rgba(28,51,97,0.15);
+}
+.map-state {
+  fill: #e8e6e1;
+  stroke: #fff;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.map-state:hover { fill: #d1d5de; }
+.map-state.active { fill: rgba(28,51,97,0.15); stroke: var(--navy); stroke-width: 2; }
+.map-pin-dot {
+  fill: var(--orange);
+  cursor: pointer;
+}
+.map-regions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.map-region-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  transition: var(--t);
+  box-shadow: var(--shadow);
+}
+.map-region-card:hover {
+  border-color: var(--navy);
+  box-shadow: var(--shadow-hover);
+}
+.map-region-card.current {
+  border-color: var(--navy);
+  background: rgba(28,51,97,0.03);
+}
+.mrc-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--border-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mrc-icon .material-symbols-outlined { font-size: 20px; color: var(--fg-subtle); }
+.map-region-card.current .mrc-icon { background: var(--navy); }
+.map-region-card.current .mrc-icon .material-symbols-outlined { color: #fff; }
+.mrc-text h4 { font-size: 14px; font-weight: 600; color: var(--fg); }
+.mrc-text p { font-size: 12px; color: var(--fg-subtle); }
+.mrc-clips {
+  margin-left: auto;
+  font-size: 13px; font-weight: 700; color: var(--navy);
+}
+
+/* ═══════════════════════════════════════════
+   DASHBOARD CALENDAR
+   ═══════════════════════════════════════════ */
+.dash-progress-row {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+.dash-calendar {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.cal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+.cal-header h4 {
+  font-size: 14px; font-weight: 700; color: var(--navy);
+}
+.cal-nav {
+  display: flex; gap: 4px;
+}
+.cal-nav button {
+  width: 28px; height: 28px; border-radius: 6px;
+  border: 1px solid var(--border-light); background: none;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: var(--t); color: var(--fg-subtle);
+}
+.cal-nav button:hover { border-color: var(--navy); color: var(--navy); }
+.cal-nav button .material-symbols-outlined { font-size: 16px; }
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  padding: 8px;
+  gap: 2px;
+}
+.cal-dow {
+  text-align: center; font-size: 12px; font-weight: 700;
+  color: var(--fg-subtle); padding: 4px 0;
+  text-transform: uppercase;
+}
+.cal-day {
+  text-align: center; font-size: 13px; padding: 6px 0;
+  border-radius: 6px; cursor: default; color: var(--fg-muted);
+  position: relative;
+}
+.cal-day.other { color: var(--border); }
+.cal-day.today {
+  background: var(--navy); color: #fff; font-weight: 700;
+}
+.cal-day.has-lesson {
+  cursor: pointer;
+}
+.cal-day.has-lesson::after {
+  content: '';
+  position: absolute; bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--orange);
+}
+.cal-day.today.has-lesson::after { background: #fff; }
+.cal-day.has-clip::after {
+  content: '';
+  position: absolute; bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--teal);
+}
+.cal-legend {
+  display: flex; gap: 14px; padding: 8px 14px;
+  border-top: 1px solid var(--border-light);
+  font-size: 12px; color: var(--fg-subtle);
+}
+.cal-legend-item { display: flex; align-items: center; gap: 5px; }
+.cal-legend-dot {
+  width: 6px; height: 6px; border-radius: 50%;
 }
 
 /* ═══════════════════════════════════════════
@@ -819,7 +1258,7 @@ body {
 .topic-icon .material-symbols-outlined { font-size: 20px; color: #fff; }
 .topic-card-text { min-width: 0; }
 .topic-card-text h4 { font-size: 13px; font-weight: 600; color: var(--fg); line-height: 1.25; }
-.topic-card-text p { font-size: 11px; color: var(--fg-subtle); margin-top: 1px; }
+.topic-card-text p { font-size: 12px; color: var(--fg-subtle); margin-top: 1px; }
 
 /* ═══════════════════════════════════════════
    SEARCH VIEW
@@ -845,7 +1284,7 @@ body {
   display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
 }
 .search-filter-label {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--fg-subtle); min-width: 65px;
 }
 .search-chip {
@@ -911,7 +1350,7 @@ body {
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,0.35);
   color: #fff;
-  font-size: 11px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   padding: 5px 14px; border-radius: 6px;
   text-transform: uppercase; letter-spacing: 0.05em;
   display: flex; align-items: center; gap: 5px;
@@ -1028,12 +1467,12 @@ body {
 .tl-card-dur {
   position: absolute; bottom: 6px; right: 6px;
   background: rgba(0,0,0,0.7); color: #fff;
-  font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px;
+  font-size: 12px; font-weight: 600; padding: 1px 6px; border-radius: 3px;
 }
 .tl-card-new {
   position: absolute; top: 6px; left: 6px;
   background: var(--teal); color: #fff;
-  font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 3px;
+  font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 3px;
   text-transform: uppercase; letter-spacing: 0.04em;
 }
 .tl-card-body { padding: 10px 12px 12px; }
@@ -1043,13 +1482,13 @@ body {
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .tl-card-body .tl-meta {
-  font-size: 11px; color: var(--fg-subtle);
+  font-size: 12px; color: var(--fg-subtle);
   display: flex; align-items: center; gap: 4px;
 }
 .tl-card-body .tl-meta .material-symbols-outlined { font-size: 13px; }
 .tl-card-tag {
   display: inline-block;
-  font-size: 9px; font-weight: 700; padding: 1px 7px;
+  font-size: 12px; font-weight: 700; padding: 1px 7px;
   border-radius: 8px; color: #fff; margin-top: 6px;
   text-transform: uppercase;
 }
@@ -1064,7 +1503,7 @@ body {
   line-height: 1;
 }
 .tl-date-marker .tl-dm-month {
-  font-size: 10px; font-weight: 600; color: var(--fg-subtle);
+  font-size: 12px; font-weight: 600; color: var(--fg-subtle);
   text-transform: uppercase; letter-spacing: 0.05em;
 }
 .tl-date-marker .tl-dm-line {
@@ -1101,7 +1540,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: rgba(255,255,255,0.35);
   margin-top: 6px;
@@ -1121,7 +1560,7 @@ body {
      TOP BAR
      ═══════════════════════════════════════════ -->
 <header class="topbar">
-  <div class="topbar-logo" onclick="showBrowse()">
+  <div class="topbar-logo" onclick="showHome()">
     <span class="logo-letters">BRI</span>
     <span class="logo-divider"></span>
     <span class="logo-sub">Civic Virtues in Action</span>
@@ -1197,8 +1636,12 @@ body {
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
-    <div class="sidebar-label">Explore</div>
-    <button class="sidebar-item active" id="navAll" onclick="filterVirtue('all')">
+    <div class="sidebar-label">Navigate</div>
+    <button class="sidebar-item active" id="navHome" onclick="showHome()">
+      <span class="material-symbols-outlined">home</span>
+      Home
+    </button>
+    <button class="sidebar-item" id="navAll" onclick="filterVirtue('all')">
       <span class="material-symbols-outlined">grid_view</span>
       All Clips
       <span class="si-count" id="countAll">12</span>
@@ -1216,37 +1659,37 @@ body {
 
   <div class="sidebar-section">
     <div class="sidebar-label">Tools</div>
-    <div class="sidebar-item disabled">
+    <button class="sidebar-item" onclick="showPlaceholder('lesson-builder','construction','Lesson Builder','Build custom lessons by combining clips, reflection prompts, and guided inquiry sequences into a shareable lesson plan.')">
       <span class="material-symbols-outlined">construction</span>
       Lesson Builder
       <span class="sidebar-soon">Soon</span>
-    </div>
-    <div class="sidebar-item disabled">
+    </button>
+    <button class="sidebar-item" onclick="showPlaceholder('classroom','cast','Classroom Mode','A distraction-free presentation view optimized for projecting clips and discussion prompts to your whole class.')">
       <span class="material-symbols-outlined">cast</span>
       Classroom Mode
       <span class="sidebar-soon">Soon</span>
-    </div>
-    <div class="sidebar-item disabled">
+    </button>
+    <button class="sidebar-item" onclick="showPlaceholder('saved','bookmark','My Saved Clips','Save and organize your favorite clips into collections for quick access during class.')">
       <span class="material-symbols-outlined">bookmark</span>
       My Saved Clips
       <span class="sidebar-soon">Soon</span>
-    </div>
-    <div class="sidebar-item disabled">
+    </button>
+    <button class="sidebar-item" onclick="showPlaceholder('prompts','edit_note','Reflection Prompts','A library of customizable reflection prompts aligned to each civic virtue and founding principle.')">
       <span class="material-symbols-outlined">edit_note</span>
       Reflection Prompts
       <span class="sidebar-soon">Soon</span>
-    </div>
-    <div class="sidebar-item disabled">
+    </button>
+    <button class="sidebar-item" onclick="showPlaceholder('progress','analytics','Class Progress','Track how your class engages with civic virtues throughout the semester.')">
       <span class="material-symbols-outlined">analytics</span>
       Class Progress
       <span class="sidebar-soon">Soon</span>
-    </div>
+    </button>
   </div>
 
   <div class="sidebar-footer">
     <div class="sidebar-footer-text">
       Washington, D.C. Metro Area<br>
-      <a href="#">Change location</a> · Updated May 2026
+      <a href="#" onclick="showMapPage(); return false;">Change location</a> · Updated May 2026
     </div>
   </div>
 </nav>
@@ -1256,16 +1699,99 @@ body {
      ═══════════════════════════════════════════ -->
 <main class="main-area" id="mainArea">
 
+  <!-- VIEW: HOME (Dashboard) -->
+  <div class="view active" id="viewHome">
+    <div class="home-welcome">
+      <div class="hw-inner">
+        <div class="hw-greeting">Welcome back, Ms. Rodriguez</div>
+        <h1 class="hw-title">Your Civics Dashboard</h1>
+        <div class="hw-swoosh"></div>
+        <p class="hw-sub">Unit 1: Foundation of American Self-Government — Washington, D.C. Metro Area</p>
+      </div>
+    </div>
+    <div class="home-content">
+      <div class="dash-section">
+        <div class="dash-section-head"><h3><span class="material-symbols-outlined">route</span> Unit 1 Progress</h3></div>
+        <div class="dash-progress-row">
+          <div>
+            <div class="dash-progress">
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width:35%"></div></div>
+              <div class="dash-progress-label">Lesson 3 of 8 · <strong>What Are Civic Virtues?</strong></div>
+            </div>
+            <div class="dash-lessons">
+              <div class="dash-lesson completed"><span class="material-symbols-outlined">check_circle</span> Lesson 1: Foundations of Government</div>
+              <div class="dash-lesson completed"><span class="material-symbols-outlined">check_circle</span> Lesson 2: Natural Rights &amp; Social Contract</div>
+              <div class="dash-lesson current"><span class="material-symbols-outlined">play_circle</span> Lesson 3: What Are Civic Virtues?</div>
+              <div class="dash-lesson"><span class="material-symbols-outlined">radio_button_unchecked</span> Lesson 4: Virtues in the Founding Era</div>
+              <div class="dash-lesson"><span class="material-symbols-outlined">radio_button_unchecked</span> Lesson 5: Principles &amp; the Constitution</div>
+              <div class="dash-lesson"><span class="material-symbols-outlined">radio_button_unchecked</span> Lesson 6: Civic Virtue Today</div>
+              <div class="dash-lesson"><span class="material-symbols-outlined">radio_button_unchecked</span> Lesson 7: Heroes &amp; Villains</div>
+              <div class="dash-lesson"><span class="material-symbols-outlined">radio_button_unchecked</span> Lesson 8: Unit Review &amp; Assessment</div>
+            </div>
+          </div>
+          <div class="dash-calendar">
+            <div class="cal-header">
+              <h4>May 2026</h4>
+              <div class="cal-nav">
+                <button><span class="material-symbols-outlined">chevron_left</span></button>
+                <button><span class="material-symbols-outlined">chevron_right</span></button>
+              </div>
+            </div>
+            <div class="cal-grid">
+              <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+              <div class="cal-day other">26</div><div class="cal-day other">27</div><div class="cal-day other">28</div><div class="cal-day other">29</div><div class="cal-day other">30</div><div class="cal-day">1</div><div class="cal-day">2</div>
+              <div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day has-lesson">5</div><div class="cal-day">6</div><div class="cal-day has-lesson">7</div><div class="cal-day">8</div><div class="cal-day">9</div>
+              <div class="cal-day">10</div><div class="cal-day today has-lesson">11</div><div class="cal-day has-clip">12</div><div class="cal-day has-lesson">13</div><div class="cal-day">14</div><div class="cal-day has-clip">15</div><div class="cal-day">16</div>
+              <div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day has-lesson">19</div><div class="cal-day">20</div><div class="cal-day has-lesson">21</div><div class="cal-day">22</div><div class="cal-day">23</div>
+              <div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day has-clip">26</div><div class="cal-day has-lesson">27</div><div class="cal-day">28</div><div class="cal-day has-lesson">29</div><div class="cal-day">30</div>
+              <div class="cal-day">31</div><div class="cal-day other">1</div><div class="cal-day other">2</div><div class="cal-day other">3</div><div class="cal-day other">4</div><div class="cal-day other">5</div><div class="cal-day other">6</div>
+            </div>
+            <div class="cal-legend">
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--orange)"></div> Lesson</div>
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--teal)"></div> Clip Assigned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-head"><h3><span class="material-symbols-outlined">bolt</span> Quick Actions</h3></div>
+        <div class="dash-actions">
+          <div class="dash-action" onclick="filterVirtue('all')"><span class="material-symbols-outlined">play_circle</span><div><strong>Browse Clips</strong><br><span>Find clips for today's lesson</span></div></div>
+          <div class="dash-action" onclick="showPlaceholder('lesson-builder','construction','Lesson Builder','Build custom lessons by combining clips, reflection prompts, and guided inquiry sequences.')"><span class="material-symbols-outlined">construction</span><div><strong>Build a Lesson</strong><br><span>Coming soon</span></div></div>
+          <div class="dash-action" onclick="showPlaceholder('classroom','cast','Classroom Mode','A distraction-free view for projecting clips and discussion prompts to your class.')"><span class="material-symbols-outlined">cast</span><div><strong>Classroom Mode</strong><br><span>Coming soon</span></div></div>
+          <div class="dash-action" onclick="showPlaceholder('progress','analytics','Class Progress','Track how your class engages with civic virtues throughout the semester.')"><span class="material-symbols-outlined">analytics</span><div><strong>Class Progress</strong><br><span>Coming soon</span></div></div>
+        </div>
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-head"><h3><span class="material-symbols-outlined">bar_chart</span> Your Library</h3></div>
+        <div class="dash-stats-row" onclick="filterVirtue('all')" style="cursor:pointer">
+          <div class="dash-stat-card"><div class="dsc-num">12</div><div class="dsc-label">Clips Available</div></div>
+          <div class="dash-stat-card"><div class="dsc-num">9</div><div class="dsc-label">Virtues Covered</div></div>
+          <div class="dash-stat-card"><div class="dsc-num">7</div><div class="dsc-label">Jurisdictions</div></div>
+          <div class="dash-stat-card"><div class="dsc-num">3</div><div class="dsc-label">New This Week</div></div>
+        </div>
+      </div>
+      <div class="dash-section">
+        <div class="dash-section-head"><h3><span class="material-symbols-outlined">new_releases</span> What's New</h3></div>
+        <div class="dash-news">
+          <div class="dash-news-item" onclick="openClip(6)" style="cursor:pointer"><span class="material-symbols-outlined" style="color:var(--teal)">fiber_new</span> <strong>3 new clips</strong> approved this week — including a powerful example of <em>Responsibility</em> from ANC 6A</div>
+          <div class="dash-news-item" style="cursor:pointer"><span class="material-symbols-outlined" style="color:var(--orange)">campaign</span> <strong>Spanish translations</strong> now available for all transcript excerpts</div>
+          <div class="dash-news-item" style="cursor:pointer"><span class="material-symbols-outlined" style="color:var(--navy)">update</span> <strong>AI narration</strong> added — clips can be read aloud for classrooms that restrict video</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- VIEW: BROWSE -->
-  <div class="view active" id="viewBrowse">
+  <div class="view" id="viewBrowse">
     <div class="browse-header">
       <div class="bh-inner">
         <div class="bh-columns">
           <div class="bh-text">
             <div class="bh-eyebrow">Government &amp; Politics — Unit 1: Foundation of American Self-Government</div>
-            <h1 class="bh-title">Civic Virtues in Your Community</h1>
+            <h1 class="bh-title">Clip Library</h1>
             <div class="bh-swoosh"></div>
-            <p class="bh-sub">Discover real examples of civic virtues from local government meetings near you. Browse curated video clips showing courage, justice, responsibility, and more — demonstrated by people in your community.</p>
+            <p class="bh-sub">Browse and discover real examples of civic virtues from local government meetings in your area.</p>
             <div class="bh-meta">
               <div class="bh-meta-item"><span class="material-symbols-outlined">location_on</span> Washington, D.C. Metro Area</div>
               <div class="bh-meta-item"><span class="material-symbols-outlined">play_circle</span> <span id="headerClipCount">12</span> clips</div>
@@ -1297,7 +1823,7 @@ body {
                 <!-- Clip location dots -->
               </svg>
             </div>
-            <a class="bh-map-link">
+            <a class="bh-map-link" onclick="showMapPage()">
               <span class="material-symbols-outlined">open_in_new</span>
               Explore other areas
             </a>
@@ -1305,68 +1831,13 @@ body {
         </div>
       </div>
     </div>
-    <div class="browse-content">
-      <!-- Recently Approved Timeline -->
-      <div class="timeline-section">
-        <div class="timeline-head">
-          <h3><span class="material-symbols-outlined">new_releases</span> Recently Approved Clips</h3>
-          <a class="tl-see-all">View all <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-        <div class="timeline-scroll-wrap">
-          <button class="tl-scroll-btn tl-scroll-left" onclick="scrollTimeline(-1)" id="tlScrollLeft">
-            <span class="material-symbols-outlined">chevron_left</span>
-          </button>
-          <div class="timeline-strip" id="timelineStrip"></div>
-          <button class="tl-scroll-btn tl-scroll-right" onclick="scrollTimeline(1)" id="tlScrollRight">
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Browse by Topic -->
-      <div class="topics-section">
-        <div class="topics-head">
-          <h3><span class="material-symbols-outlined">category</span> Browse by Topic</h3>
-        </div>
-        <div class="topics-grid">
-          <div class="topic-card" onclick="doSearch('budget')">
-            <div class="topic-icon" style="background:#2980b9"><span class="material-symbols-outlined">payments</span></div>
-            <div class="topic-card-text"><h4>Budget &amp; Finance</h4><p>Spending, taxes, audits</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('safety')">
-            <div class="topic-icon" style="background:#c0392b"><span class="material-symbols-outlined">shield</span></div>
-            <div class="topic-card-text"><h4>Public Safety</h4><p>Police, fire, emergency</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('education')">
-            <div class="topic-icon" style="background:#27ae60"><span class="material-symbols-outlined">school</span></div>
-            <div class="topic-card-text"><h4>Education</h4><p>Schools, boards, policy</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('zoning')">
-            <div class="topic-icon" style="background:#8e44ad"><span class="material-symbols-outlined">location_city</span></div>
-            <div class="topic-card-text"><h4>Zoning &amp; Land Use</h4><p>Development, permits</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('voting')">
-            <div class="topic-icon" style="background:#e67e22"><span class="material-symbols-outlined">how_to_vote</span></div>
-            <div class="topic-card-text"><h4>Elections &amp; Voting</h4><p>Ballots, access, districts</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('health')">
-            <div class="topic-icon" style="background:#16a085"><span class="material-symbols-outlined">health_and_safety</span></div>
-            <div class="topic-card-text"><h4>Public Health</h4><p>Services, clinics, policy</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('housing')">
-            <div class="topic-icon" style="background:#d35400"><span class="material-symbols-outlined">house</span></div>
-            <div class="topic-card-text"><h4>Housing</h4><p>Affordable, zoning, rent</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('transportation')">
-            <div class="topic-icon" style="background:#1a5276"><span class="material-symbols-outlined">directions_bus</span></div>
-            <div class="topic-card-text"><h4>Transportation</h4><p>Transit, roads, bikes</p></div>
-          </div>
-          <div class="topic-card" onclick="doSearch('environment')">
-            <div class="topic-icon" style="background:#2ecc71"><span class="material-symbols-outlined">park</span></div>
-            <div class="topic-card-text"><h4>Environment</h4><p>Parks, water, climate</p></div>
-          </div>
-        </div>
-      </div>
+    <div class="browse-content" id="browseContent">
+      <!-- Featured (only on All Clips) -->
+      <div class="browse-section" id="browseFeatured"></div>
+      <!-- Recently Approved (only on All Clips) -->
+      <div class="browse-section" id="browseRecent"></div>
+      <!-- Browse by Topic (only on All Clips) -->
+      <div class="browse-section" id="browseTopics"></div>
 
       <div class="filter-row">
         <div class="results" id="resultsInfo">Showing <strong>12</strong> clips across <strong>9</strong> virtues</div>
@@ -1394,6 +1865,10 @@ body {
               <div class="dvo-meta-item"><span class="material-symbols-outlined">groups</span><span id="dBody"></span></div>
             </div>
           </div>
+        </div>
+        <div class="clip-sections-bar" id="clipSectionsBar">
+          <span class="csb-label">Jump to:</span>
+          <div class="csb-sections" id="clipSections"></div>
         </div>
         <div class="detail-body">
           <div class="detail-tags" id="dTags"></div>
@@ -1494,6 +1969,207 @@ body {
     </div>
   </div>
 
+  <!-- VIEW: MAP / LOCATION -->
+  <div class="view" id="viewMap">
+    <div class="map-page">
+      <div class="map-page-header">
+        <h1>Choose Your Area</h1>
+        <p>Select a region to browse civic virtue clips from local government meetings near your school.</p>
+      </div>
+
+      <div class="map-current-loc">
+        <span class="material-symbols-outlined">my_location</span>
+        <div class="mcl-text">
+          <h3>Washington, D.C. Metro Area</h3>
+          <p>Includes D.C., Arlington, Alexandria, Fairfax, Montgomery &amp; Prince George's Counties</p>
+        </div>
+        <div class="mcl-badge">Current</div>
+      </div>
+
+      <div class="map-svg-container">
+        <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simplified US map with regions -->
+          <rect width="900" height="400" fill="#fafaf8"/>
+
+          <!-- Rough state outlines as rounded rects -->
+          <!-- West -->
+          <rect class="map-state" x="30" y="60" width="100" height="120" rx="8"/>
+          <text class="map-region-label" x="80" y="125" text-anchor="middle" font-size="12">WA</text>
+          <rect class="map-state" x="30" y="190" width="100" height="100" rx="8"/>
+          <text class="map-region-label" x="80" y="245" text-anchor="middle" font-size="12">OR</text>
+          <rect class="map-state" x="30" y="300" width="100" height="80" rx="8"/>
+          <text class="map-region-label" x="80" y="345" text-anchor="middle" font-size="12">CA</text>
+          <circle class="map-pin-dot" cx="65" cy="340" r="4"/>
+
+          <!-- Mountain -->
+          <rect class="map-state" x="140" y="80" width="90" height="100" rx="8"/>
+          <text class="map-region-label" x="185" y="135" text-anchor="middle" font-size="12">MT</text>
+          <rect class="map-state" x="140" y="190" width="90" height="90" rx="8"/>
+          <text class="map-region-label" x="185" y="240" text-anchor="middle" font-size="12">CO</text>
+          <circle class="map-pin-dot" cx="175" cy="230" r="4"/>
+          <rect class="map-state" x="140" y="290" width="90" height="90" rx="8"/>
+          <text class="map-region-label" x="185" y="340" text-anchor="middle" font-size="12">AZ</text>
+
+          <!-- Central -->
+          <rect class="map-state" x="240" y="80" width="90" height="90" rx="8"/>
+          <text class="map-region-label" x="285" y="130" text-anchor="middle" font-size="12">MN</text>
+          <rect class="map-state" x="240" y="180" width="90" height="90" rx="8"/>
+          <text class="map-region-label" x="285" y="230" text-anchor="middle" font-size="12">MO</text>
+          <rect class="map-state" x="240" y="280" width="90" height="100" rx="8"/>
+          <text class="map-region-label" x="285" y="335" text-anchor="middle" font-size="12">TX</text>
+          <circle class="map-pin-dot" cx="275" cy="320" r="4"/>
+          <circle class="map-pin-dot" cx="295" cy="340" r="4"/>
+
+          <!-- Midwest -->
+          <rect class="map-state" x="340" y="80" width="85" height="80" rx="8"/>
+          <text class="map-region-label" x="382" y="125" text-anchor="middle" font-size="12">WI</text>
+          <rect class="map-state" x="340" y="170" width="85" height="80" rx="8"/>
+          <text class="map-region-label" x="382" y="215" text-anchor="middle" font-size="12">IL</text>
+          <circle class="map-pin-dot" cx="370" cy="200" r="4"/>
+          <rect class="map-state" x="340" y="260" width="85" height="70" rx="8"/>
+          <text class="map-region-label" x="382" y="300" text-anchor="middle" font-size="12">TN</text>
+
+          <!-- Great Lakes / Mid-Atlantic -->
+          <rect class="map-state" x="435" y="70" width="90" height="80" rx="8"/>
+          <text class="map-region-label" x="480" y="115" text-anchor="middle" font-size="12">MI</text>
+          <rect class="map-state" x="435" y="160" width="90" height="80" rx="8"/>
+          <text class="map-region-label" x="480" y="205" text-anchor="middle" font-size="12">OH</text>
+          <rect class="map-state" x="435" y="250" width="90" height="70" rx="8"/>
+          <text class="map-region-label" x="480" y="290" text-anchor="middle" font-size="12">KY</text>
+
+          <!-- Southeast -->
+          <rect class="map-state" x="535" y="250" width="90" height="70" rx="8"/>
+          <text class="map-region-label" x="580" y="290" text-anchor="middle" font-size="12">NC</text>
+          <circle class="map-pin-dot" cx="570" cy="280" r="4"/>
+          <rect class="map-state" x="535" y="330" width="90" height="60" rx="8"/>
+          <text class="map-region-label" x="580" y="365" text-anchor="middle" font-size="12">GA</text>
+          <circle class="map-pin-dot" cx="575" cy="355" r="4"/>
+          <rect class="map-state" x="445" y="330" width="80" height="60" rx="8"/>
+          <text class="map-region-label" x="485" y="365" text-anchor="middle" font-size="12">AL</text>
+
+          <!-- Mid-Atlantic -->
+          <rect class="map-state" x="535" y="140" width="80" height="50" rx="8"/>
+          <text class="map-region-label" x="575" y="170" text-anchor="middle" font-size="12">PA</text>
+          <circle class="map-pin-dot" cx="565" cy="160" r="4"/>
+          <rect class="map-state" x="535" y="200" width="80" height="40" rx="8"/>
+          <text class="map-region-label" x="575" y="225" text-anchor="middle" font-size="12">VA</text>
+          <circle class="map-pin-dot" cx="560" cy="215" r="5"/>
+
+          <!-- DC area highlight -->
+          <rect class="map-state active" x="625" y="175" width="75" height="50" rx="8"/>
+          <text x="662" y="200" text-anchor="middle" font-size="13" font-weight="800" fill="var(--navy)">D.C.</text>
+          <circle cx="662" cy="210" r="6" fill="var(--orange)" stroke="#fff" stroke-width="2"/>
+
+          <!-- Northeast -->
+          <rect class="map-state" x="625" y="70" width="75" height="50" rx="8"/>
+          <text class="map-region-label" x="662" y="100" text-anchor="middle" font-size="12">NY</text>
+          <circle class="map-pin-dot" cx="655" cy="90" r="4"/>
+          <rect class="map-state" x="625" y="130" width="75" height="38" rx="8"/>
+          <text class="map-region-label" x="662" y="154" text-anchor="middle" font-size="12">NJ</text>
+
+          <!-- New England -->
+          <rect class="map-state" x="710" y="50" width="65" height="45" rx="8"/>
+          <text class="map-region-label" x="742" y="77" text-anchor="middle" font-size="12">MA</text>
+          <circle class="map-pin-dot" cx="738" cy="68" r="4"/>
+          <rect class="map-state" x="710" y="105" width="65" height="40" rx="8"/>
+          <text class="map-region-label" x="742" y="130" text-anchor="middle" font-size="12">CT</text>
+
+          <!-- Florida -->
+          <rect class="map-state" x="535" y="330" width="90" height="60" rx="8" style="display:none"/>
+          <rect class="map-state" x="500" y="330" width="30" height="60" rx="6"/>
+          <text class="map-region-label" x="515" y="365" text-anchor="middle" font-size="12">FL</text>
+          <circle class="map-pin-dot" cx="515" cy="355" r="4"/>
+        </svg>
+      </div>
+
+      <div class="map-page-header" style="margin-bottom:16px">
+        <h1 style="font-size:18px">Available Regions</h1>
+        <p>Select a region to switch your clip library. Regions with more clips appear first.</p>
+      </div>
+
+      <div class="map-regions-grid">
+        <div class="map-region-card current" onclick="showHome()">
+          <div class="mrc-icon"><span class="material-symbols-outlined">my_location</span></div>
+          <div class="mrc-text"><h4>Washington, D.C.</h4><p>Metro area · 7 jurisdictions</p></div>
+          <div class="mrc-clips">12 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>New York City</h4><p>5 boroughs · 3 jurisdictions</p></div>
+          <div class="mrc-clips">8 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Los Angeles</h4><p>LA County · 4 jurisdictions</p></div>
+          <div class="mrc-clips">6 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Chicago</h4><p>Cook County · 3 jurisdictions</p></div>
+          <div class="mrc-clips">5 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Houston</h4><p>Harris County · 2 jurisdictions</p></div>
+          <div class="mrc-clips">4 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Philadelphia</h4><p>Metro area · 3 jurisdictions</p></div>
+          <div class="mrc-clips">4 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Atlanta</h4><p>Fulton County · 2 jurisdictions</p></div>
+          <div class="mrc-clips">3 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Boston</h4><p>Metro area · 3 jurisdictions</p></div>
+          <div class="mrc-clips">3 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Denver</h4><p>Metro area · 2 jurisdictions</p></div>
+          <div class="mrc-clips">2 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Raleigh-Durham</h4><p>Triangle area · 3 jurisdictions</p></div>
+          <div class="mrc-clips">2 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Dallas-Fort Worth</h4><p>Metro area · 4 jurisdictions</p></div>
+          <div class="mrc-clips">2 clips</div>
+        </div>
+        <div class="map-region-card">
+          <div class="mrc-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div class="mrc-text"><h4>Miami</h4><p>Dade County · 2 jurisdictions</p></div>
+          <div class="mrc-clips">1 clip</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW: PLACEHOLDER (for coming soon features) -->
+  <div class="view" id="viewPlaceholder">
+    <div class="placeholder-page">
+      <div class="pp-icon" id="ppIcon"><span class="material-symbols-outlined">construction</span></div>
+      <h2 class="pp-title" id="ppTitle">Coming Soon</h2>
+      <p class="pp-desc" id="ppDesc">This feature is currently in development.</p>
+      <div class="pp-badge">Coming Soon</div>
+      <div class="pp-preview-cards">
+        <div class="pp-card"></div>
+        <div class="pp-card"></div>
+        <div class="pp-card"></div>
+        <div class="pp-card"></div>
+        <div class="pp-card"></div>
+        <div class="pp-card"></div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <script>
@@ -1520,16 +2196,16 @@ const C = [
     connect:'Think about a time when you disagreed with a popular decision. What made it hard to speak up?',
     evidence:'"I know this isn\'t popular, but I\'ve lived here for 34 years and I have a responsibility to say what I believe is true — even when it makes people uncomfortable."',
     transcript:'<span class="transcript-speaker">Commissioner Davis</span> <span class="transcript-time">[12:34]</span>: Next we have public comment on the proposed zoning variance for the lot on Georgia Avenue.<br><br><span class="transcript-speaker">Margaret Chen</span> <span class="transcript-time">[12:35]</span>: Thank you, Commissioner. My name is Margaret Chen and I\'ve lived on Ninth Street for 34 years. I know this isn\'t popular, but I have a responsibility to say what I believe is true — even when it makes people uncomfortable.<br><br><span class="transcript-speaker">Margaret Chen</span> <span class="transcript-time">[12:36]</span>: The variance being proposed would allow a building that exceeds the neighborhood plan by three stories. I\'ve reviewed the comprehensive plan, and this directly contradicts what we agreed to in 2019.',
-    inq:[{ph:'Observe',q:'What is the civic context? What decision is being debated?'},{ph:'Observe',q:'What specific risks does the speaker face by speaking?'},{ph:'Identify',q:'Which civic virtue(s) do you see? What is your evidence?'},{ph:'Justify',q:'How does this fit BRI\'s definition of courage: "to stand firm and do what is right, especially when it is unpopular"?'},{ph:'Reflect',q:'What might have happened if this resident chose not to speak?'}]
+    inq:[{ph:'Orient',q:'What do you already know about the civic virtue of courage? How would you define it in your own words before watching?'},{ph:'Observe',q:'What is the civic context? What decision is being debated?'},{ph:'Observe',q:'What specific risks does the speaker face by speaking?'},{ph:'Identify',q:'Which civic virtue(s) do you see? What is your evidence?'},{ph:'Justify',q:'How does this fit BRI\'s definition of courage: "to stand firm and do what is right, especially when it is unpopular"?'},{ph:'Reflect',q:'What might have happened if this resident chose not to speak?'}]
   },
-  { id:2, v:'courage', p:['liberty'], title:'Council Member Votes Against Party on Civil Liberties', jur:'D.C. City Council', body:'Council Legislative Session', date:'Feb 28, 2026', dur:'4:15',
+  { id:2, v:'courage', v2:'integrity', p:['liberty'], title:'Council Member Votes Against Party on Civil Liberties', jur:'D.C. City Council', body:'Council Legislative Session', date:'Feb 28, 2026', dur:'4:15',
     desc:'A council member breaks with their caucus to vote against a surveillance measure, citing constitutional concerns. They explain their reasoning knowing it will cost political support.',
     why:'Elected officials face enormous pressure to vote with their party. This shows civic courage at the institutional level.',
     watch:'Listen for how the council member acknowledges the political cost of their vote.',
     connect:'Have you ever had to disagree with a group of friends? How did you decide?',
     evidence:'"I will be voting no today, and I expect that will have consequences within my caucus. But I did not run for this office to be popular."',
     transcript:'<span class="transcript-speaker">Council Member Williams</span> <span class="transcript-time">[2:14:30]</span>: Mr. Chairman, I rise to explain my vote. I will be voting no today, and I expect that will have consequences within my caucus. But I did not run for this office to be popular — I ran to protect the rights of the people who sent me here.',
-    inq:[{ph:'Observe',q:'What is the political context? Why is this vote significant?'},{ph:'Observe',q:'What specific risk does the council member identify?'},{ph:'Identify',q:'Is this courage, integrity, or both? Explain.'},{ph:'Justify',q:'How does this connect to the founding principle of liberty?'},{ph:'Reflect',q:'Should elected officials always follow conscience over voters? Why or why not?'}]
+    inq:[{ph:'Orient',q:'What do you already know about the civic virtue of courage? How would you define it in your own words before watching?'},{ph:'Observe',q:'What is the political context? Why is this vote significant?'},{ph:'Observe',q:'What specific risk does the council member identify?'},{ph:'Identify',q:'Is this courage, integrity, or both? Explain.'},{ph:'Justify',q:'How does this connect to the founding principle of liberty?'},{ph:'Reflect',q:'Should elected officials always follow conscience over voters? Why or why not?'}]
   },
   { id:3, v:'justice', p:['due process','equality'], title:'Board Ensures Equal Hearing Time for All Speakers', jur:'Arlington County Board', body:'County Board Meeting', date:'Apr 2, 2026', dur:'2:58',
     desc:'When a well-connected developer tries to extend their presentation, the board chair firmly enforces equal speaking rules, ensuring a small business owner gets the same opportunity.',
@@ -1538,7 +2214,7 @@ const C = [
     connect:'Are there times when rules at your school are applied differently depending on who you are?',
     evidence:'"The rules apply to everyone at this podium equally — three minutes, no exceptions. That\'s how we ensure every voice in this county has the same weight."',
     transcript:'<span class="transcript-speaker">Chair Martinez</span> <span class="transcript-time">[45:12]</span>: Mr. Harrison, your three minutes have concluded.<br><br><span class="transcript-speaker">Developer Harrison</span> <span class="transcript-time">[45:15]</span>: Chair Martinez, if I could just have two more minutes—<br><br><span class="transcript-speaker">Chair Martinez</span> <span class="transcript-time">[45:18]</span>: The rules apply to everyone at this podium equally — three minutes, no exceptions.',
-    inq:[{ph:'Observe',q:'Who are the parties involved? What are their interests?'},{ph:'Observe',q:'What action does the board chair take?'},{ph:'Identify',q:'How does this demonstrate justice? Could it also show another virtue?'},{ph:'Justify',q:'How does enforcing equal speaking time connect to due process and equality?'},{ph:'Reflect',q:'Why is procedural fairness important even when it means cutting off valuable information?'}]
+    inq:[{ph:'Orient',q:'Before watching, how would you define justice in a civic context? What does fairness look like in government?'},{ph:'Observe',q:'Who are the parties involved? What are their interests?'},{ph:'Observe',q:'What action does the board chair take?'},{ph:'Identify',q:'How does this demonstrate justice? Could it also show another virtue?'},{ph:'Justify',q:'How does enforcing equal speaking time connect to due process and equality?'},{ph:'Reflect',q:'Why is procedural fairness important even when it means cutting off valuable information?'}]
   },
   { id:4, v:'justice', p:['rule of law'], title:'Advocate Pushes for Accessible Polling Locations', jur:'Montgomery County Board of Elections', body:'Board of Elections Hearing', date:'Jan 19, 2026', dur:'3:20',
     desc:'A disability rights advocate presents data showing polling locations fail ADA requirements, asking the board to ensure equal access for all voters.',
@@ -1547,25 +2223,25 @@ const C = [
     connect:'What barriers to participation exist in your school or community?',
     evidence:'"Seven of our 42 polling locations have steps without ramps, no accessible voting machines, or inadequate signage. These aren\'t preferences — these are legal requirements."',
     transcript:'<span class="transcript-speaker">Sarah Okonkwo</span> <span class="transcript-time">[23:45]</span>: Members of the board, I\'m Sarah Okonkwo with the Montgomery County Disability Rights Coalition. Seven of our 42 polling locations have steps without ramps. These aren\'t preferences — these are legal requirements that protect every citizen\'s right to vote.',
-    inq:[{ph:'Observe',q:'What civic institution is involved? What authority do they have?'},{ph:'Observe',q:'What evidence does the advocate present?'},{ph:'Identify',q:'Which virtue and principle(s) are demonstrated?'},{ph:'Justify',q:'How does this illustrate the relationship between justice and rule of law?'},{ph:'Reflect',q:'What responsibility do citizens have to hold government accountable?'}]
+    inq:[{ph:'Orient',q:'Before watching, how would you define justice in a civic context? What does fairness look like in government?'},{ph:'Observe',q:'What civic institution is involved? What authority do they have?'},{ph:'Observe',q:'What evidence does the advocate present?'},{ph:'Identify',q:'Which virtue and principle(s) are demonstrated?'},{ph:'Justify',q:'How does this illustrate the relationship between justice and rule of law?'},{ph:'Reflect',q:'What responsibility do citizens have to hold government accountable?'}]
   },
-  { id:5, v:'responsibility', p:['republic'], title:'Parent Organizes School Safety Walkthrough', jur:'D.C. Public Schools — Ward 7', body:'Ward 7 Community Ed Meeting', date:'Mar 22, 2026', dur:'4:02',
+  { id:5, v:'responsibility', v2:'courage', p:['republic'], title:'Parent Organizes School Safety Walkthrough', jur:'D.C. Public Schools — Ward 7', body:'Ward 7 Community Ed Meeting', date:'Mar 22, 2026', dur:'4:02',
     desc:'Rather than just complaining about unsafe conditions near her children\'s school, a parent coordinates with city agencies, organizes a community walkthrough, and presents an action plan.',
     why:'Responsibility means going beyond identifying problems to actively working on solutions.',
     watch:'Notice how the parent shifts from describing the problem to presenting a plan.',
     connect:'When you see a problem in your neighborhood, what do you do? What would it look like to take responsibility?',
     evidence:'"I could have just called 311 again. But I realized that if I want my children to grow up safe, I need to do more than complain — I need to organize."',
     transcript:'<span class="transcript-speaker">Diana Reyes</span> <span class="transcript-time">[1:05:20]</span>: My name is Diana Reyes, and my two children attend Hendley Elementary. I could have just called 311 again. But I realized that if I want my children to grow up safe, I need to do more than complain — I need to organize.',
-    inq:[{ph:'Observe',q:'What problem is being addressed? Who is involved?'},{ph:'Observe',q:'What actions did this parent take beyond reporting?'},{ph:'Identify',q:'Why is this civic responsibility, not just good parenting?'},{ph:'Justify',q:'How does this connect to the idea of a republic?'},{ph:'Reflect',q:'How might organizing like this be unpopular? Why does it matter?'}]
+    inq:[{ph:'Orient',q:'What does civic responsibility mean to you? How is it different from personal responsibility?'},{ph:'Observe',q:'What problem is being addressed? Who is involved?'},{ph:'Observe',q:'What actions did this parent take beyond reporting?'},{ph:'Identify',q:'Why is this civic responsibility, not just good parenting?'},{ph:'Justify',q:'How does this connect to the idea of a republic?'},{ph:'Reflect',q:'How might organizing like this be unpopular? Why does it matter?'}]
   },
-  { id:6, v:'responsibility', p:['consent of the governed'], title:'Commissioner Admits Error and Reverses Vote', jur:'D.C. ANC 6A', body:'ANC 6A Regular Meeting', date:'Apr 10, 2026', dur:'2:45',
+  { id:6, v:'responsibility', v2:'humility', p:['consent of the governed'], title:'Commissioner Admits Error and Reverses Vote', jur:'D.C. ANC 6A', body:'ANC 6A Regular Meeting', date:'Apr 10, 2026', dur:'2:45',
     desc:'A commissioner publicly acknowledges that a previous vote was taken without proper community input, apologizes, and moves to reconsider with a new public comment period.',
     why:'Taking responsibility for mistakes — especially public ones — requires both courage and humility.',
     watch:'Listen for how the commissioner frames their admission. Do they deflect or take ownership?',
     connect:'Think about a time you made a mistake that affected others. What did it take to admit it?',
     evidence:'"We voted on the liquor license renewal without opening public comment. That was wrong. I take responsibility for that oversight."',
     transcript:'<span class="transcript-speaker">Commissioner Park</span> <span class="transcript-time">[32:10]</span>: We voted on the liquor license renewal without opening public comment. That was wrong. I take responsibility for that oversight, and I\'m moving to reconsider.',
-    inq:[{ph:'Observe',q:'What mistake was made? What are its civic implications?'},{ph:'Observe',q:'What actions does the commissioner take to correct it?'},{ph:'Identify',q:'Which virtues are demonstrated? Responsibility AND humility?'},{ph:'Justify',q:'How does holding a new public comment connect to consent of the governed?'},{ph:'Reflect',q:'Why is it important for officials to publicly admit mistakes?'}]
+    inq:[{ph:'Orient',q:'What does civic responsibility mean to you? How is it different from personal responsibility?'},{ph:'Observe',q:'What mistake was made? What are its civic implications?'},{ph:'Observe',q:'What actions does the commissioner take to correct it?'},{ph:'Identify',q:'Which virtues are demonstrated? Responsibility AND humility?'},{ph:'Justify',q:'How does holding a new public comment connect to consent of the governed?'},{ph:'Reflect',q:'Why is it important for officials to publicly admit mistakes?'}]
   },
   { id:7, v:'integrity', p:['rule of law'], title:'Inspector General Reports Uncomfortable Audit Findings', jur:'D.C. Office of Inspector General', body:'D.C. Council Oversight Hearing', date:'Feb 5, 2026', dur:'3:55',
     desc:'The inspector general presents findings implicating a popular city program in financial mismanagement, refusing to soften findings despite political pressure.',
@@ -1574,7 +2250,7 @@ const C = [
     connect:'Have you ever had to share bad news honestly when it would have been easier to soften it?',
     evidence:'"My obligation is to report what we found, not what anyone wishes we had found."',
     transcript:'<span class="transcript-speaker">Inspector General Thompson</span> <span class="transcript-time">[1:42:15]</span>: My obligation is to report what we found, not what anyone wishes we had found. The data shows a $2.3 million discrepancy that cannot be explained by the documentation provided.',
-    inq:[{ph:'Observe',q:'What is the inspector general\'s role? Why does independence matter?'},{ph:'Observe',q:'What pressure is she facing? How does she respond?'},{ph:'Identify',q:'How does this demonstrate "telling the truth, exposing untruths, and keeping promises"?'},{ph:'Justify',q:'How does honest reporting connect to rule of law?'},{ph:'Reflect',q:'What happens to public trust when officials routinely soften findings?'}]
+    inq:[{ph:'Orient',q:'How would you define integrity? Why might it be especially important for people in government roles?'},{ph:'Observe',q:'What is the inspector general\'s role? Why does independence matter?'},{ph:'Observe',q:'What pressure is she facing? How does she respond?'},{ph:'Identify',q:'How does this demonstrate "telling the truth, exposing untruths, and keeping promises"?'},{ph:'Justify',q:'How does honest reporting connect to rule of law?'},{ph:'Reflect',q:'What happens to public trust when officials routinely soften findings?'}]
   },
   { id:8, v:'humility', p:['consent of the governed'], title:'Mayor Invites Community Expertise on Budget', jur:'City of Alexandria, VA', body:'City Council Budget Session', date:'Mar 30, 2026', dur:'3:10',
     desc:'The mayor pauses a budget presentation to acknowledge the council lacks expertise on a health issue, and invites community health workers to present before any votes.',
@@ -1583,7 +2259,7 @@ const C = [
     connect:'Think about a group project where one person took over. How would asking for others\' expertise have changed things?',
     evidence:'"Frankly, we don\'t have the expertise at this table to make this decision well. Ms. Adeyemi, would you walk us through what you\'re seeing on the ground?"',
     transcript:'<span class="transcript-speaker">Mayor Franklin</span> <span class="transcript-time">[2:30:05]</span>: I\'m going to pause us here because, frankly, we don\'t have the expertise at this table to make this decision well. Ms. Adeyemi, would you and your team walk us through what you\'re seeing on the ground?',
-    inq:[{ph:'Observe',q:'What is the mayor doing that is unusual for someone in authority?'},{ph:'Observe',q:'How does the room respond?'},{ph:'Identify',q:'How does this show humility: "recognition that one\'s ignorance is far greater than one\'s knowledge"?'},{ph:'Justify',q:'How does inviting expertise connect to consent of the governed?'},{ph:'Reflect',q:'Why might humility be hardest for leaders? What are the risks and rewards?'}]
+    inq:[{ph:'Orient',q:'What does humility look like in leadership? Can you think of an example from your own experience?'},{ph:'Observe',q:'What is the mayor doing that is unusual for someone in authority?'},{ph:'Observe',q:'How does the room respond?'},{ph:'Identify',q:'How does this show humility: "recognition that one\'s ignorance is far greater than one\'s knowledge"?'},{ph:'Justify',q:'How does inviting expertise connect to consent of the governed?'},{ph:'Reflect',q:'Why might humility be hardest for leaders? What are the risks and rewards?'}]
   },
   { id:9, v:'honor', p:['republic'], title:'Outgoing Board Member Mentors Successor Across Party Lines', jur:'Fairfax County Board of Supervisors', body:'Board Transition Meeting', date:'Jan 8, 2026', dur:'2:30',
     desc:'A retiring board member from one party publicly commits to mentoring the incoming member from the opposing party, emphasizing duty over partisanship.',
@@ -1592,7 +2268,7 @@ const C = [
     connect:'Have you ever helped someone succeed who might compete with you?',
     evidence:'"The people of this district didn\'t elect a party — they elected a person to serve them."',
     transcript:'<span class="transcript-speaker">Supervisor Richardson</span> <span class="transcript-time">[15:42]</span>: The people of this district didn\'t elect a party — they elected a person to serve them. I intend to make sure my successor has every advantage I can give them.',
-    inq:[{ph:'Observe',q:'What is the political context? What is unusual here?'},{ph:'Observe',q:'What specific actions does the outgoing member take?'},{ph:'Identify',q:'How does this demonstrate "good character and being trustworthy"?'},{ph:'Justify',q:'How does generous transition of power connect to the idea of a republic?'},{ph:'Reflect',q:'What makes this behavior rare in today\'s political climate?'}]
+    inq:[{ph:'Orient',q:'What does it mean to act with honor in public life? How is honor different from reputation?'},{ph:'Observe',q:'What is the political context? What is unusual here?'},{ph:'Observe',q:'What specific actions does the outgoing member take?'},{ph:'Identify',q:'How does this demonstrate "good character and being trustworthy"?'},{ph:'Justify',q:'How does generous transition of power connect to the idea of a republic?'},{ph:'Reflect',q:'What makes this behavior rare in today\'s political climate?'}]
   },
   { id:10, v:'respect', p:['equality'], title:'Chair Ensures Non-English Speaker is Fully Heard', jur:'Prince George\'s County Council', body:'County Council Public Hearing', date:'Apr 18, 2026', dur:'3:35',
     desc:'When a Spanish-speaking resident begins to testify, the council chair stops proceedings to arrange a translator, extends speaking time, and asks the audience to be patient.',
@@ -1601,7 +2277,7 @@ const C = [
     connect:'Think about someone in your community who faces barriers to being heard. What could you do?',
     evidence:'"Mrs. Gutierrez has every right to be heard in this chamber. That is what respect looks like in a democracy."',
     transcript:'<span class="transcript-speaker">Chair Johnson</span> <span class="transcript-time">[1:12:30]</span>: Mrs. Gutierrez, we\'re going to get a translator. We\'ll extend your time.<br><br><span class="transcript-speaker">Chair Johnson</span> <span class="transcript-time">[1:12:45]</span>: Mrs. Gutierrez has every right to be heard in this chamber. That is what respect looks like in a democracy.',
-    inq:[{ph:'Observe',q:'What barrier to participation exists? How does the chair respond?'},{ph:'Observe',q:'What does the chair do beyond just arranging a translator?'},{ph:'Identify',q:'How does this show "regard for and defending the equal rights and inherent dignity of all"?'},{ph:'Justify',q:'How does ensuring participation connect to the principle of equality?'},{ph:'Reflect',q:'What other barriers prevent people from civic participation?'}]
+    inq:[{ph:'Orient',q:'What does respect look like in a civic setting? Who has a right to be heard in government meetings?'},{ph:'Observe',q:'What barrier to participation exists? How does the chair respond?'},{ph:'Observe',q:'What does the chair do beyond just arranging a translator?'},{ph:'Identify',q:'How does this show "regard for and defending the equal rights and inherent dignity of all"?'},{ph:'Justify',q:'How does ensuring participation connect to the principle of equality?'},{ph:'Reflect',q:'What other barriers prevent people from civic participation?'}]
   },
   { id:11, v:'prudence', p:['federalism'], title:'Committee Delays Vote to Study Long-Term Impact', jur:'D.C. Council — Finance Committee', body:'Committee on Finance Hearing', date:'Feb 20, 2026', dur:'4:10',
     desc:'Despite pressure to approve a popular spending measure before an election, the committee chair requests a 30-day fiscal impact study, arguing that prudent governance requires understanding consequences.',
@@ -1610,7 +2286,7 @@ const C = [
     connect:'Have you ever made a decision too quickly and regretted it?',
     evidence:'"Voting today without understanding the five-year fiscal impact would be irresponsible. Prudent governance means we owe our constituents better than a guess."',
     transcript:'<span class="transcript-speaker">Chair Patel</span> <span class="transcript-time">[3:15:20]</span>: I support the goals of this measure. But voting today without understanding the five-year fiscal impact would be irresponsible. Prudent governance means we owe our constituents better than a guess.',
-    inq:[{ph:'Observe',q:'What pressure is the chair facing? Why is there urgency?'},{ph:'Observe',q:'How does she balance support for the measure with caution?'},{ph:'Identify',q:'How does this show "practical wisdom that applies reason to discern right action"?'},{ph:'Justify',q:'How does requesting a study before voting relate to governance in a republic?'},{ph:'Reflect',q:'When does caution become a virtue, and when might it become a vice?'}]
+    inq:[{ph:'Orient',q:'What is the difference between being cautious and being prudent? When might slowing down be the wise choice?'},{ph:'Observe',q:'What pressure is the chair facing? Why is there urgency?'},{ph:'Observe',q:'How does she balance support for the measure with caution?'},{ph:'Identify',q:'How does this show "practical wisdom that applies reason to discern right action"?'},{ph:'Justify',q:'How does requesting a study before voting relate to governance in a republic?'},{ph:'Reflect',q:'When does caution become a virtue, and when might it become a vice?'}]
   },
   { id:12, v:'moderation', p:['checks and balances'], title:'Mediator De-escalates Heated Neighborhood Dispute', jur:'D.C. Office of Neighborhood Safety', body:'Community Mediation Session', date:'Mar 5, 2026', dur:'3:48',
     desc:'When a dispute between two neighborhood groups becomes heated, a facilitator models moderation by acknowledging both sides, lowering the temperature, and redirecting toward shared interests.',
@@ -1619,7 +2295,7 @@ const C = [
     connect:'Think about a heated argument you\'ve witnessed. What could moderation have looked like?',
     evidence:'"I hear two groups of people who both love this neighborhood. The problem is that we\'ve stopped listening to each other."',
     transcript:'<span class="transcript-speaker">Facilitator Adams</span> <span class="transcript-time">[42:15]</span>: I hear two groups of people who both love this neighborhood. The problem is that we\'ve stopped listening to each other. Let\'s take a breath and start with what we agree on.',
-    inq:[{ph:'Observe',q:'What is the conflict? What caused it to escalate?'},{ph:'Observe',q:'What techniques does the facilitator use to de-escalate?'},{ph:'Identify',q:'How does this show "exercising self-control and finding the right balance"?'},{ph:'Justify',q:'Aristotle described virtue as a "golden mean." What would the extremes look like here?'},{ph:'Reflect',q:'When is compromise a virtue and when might it be a vice?'}]
+    inq:[{ph:'Orient',q:'What does moderation mean in a disagreement? Is it the same as compromise?'},{ph:'Observe',q:'What is the conflict? What caused it to escalate?'},{ph:'Observe',q:'What techniques does the facilitator use to de-escalate?'},{ph:'Identify',q:'How does this show "exercising self-control and finding the right balance"?'},{ph:'Justify',q:'Aristotle described virtue as a "golden mean." What would the extremes look like here?'},{ph:'Reflect',q:'When is compromise a virtue and when might it be a vice?'}]
   }
 ];
 
@@ -1708,6 +2384,11 @@ function renderBrowse(clips) {
 }
 
 function cardHTML(c, vd) {
+  let extraVirtue = '';
+  if (c.v2) {
+    const vd2 = V.find(v => v.key === c.v2);
+    if (vd2) extraVirtue = `<span class="clip-tag tag-v" style="background:${vd2.color}">${vd2.label}</span>`;
+  }
   return `
     <div class="clip-card fade-up" onclick="openClip(${c.id})">
       <div class="clip-thumb">
@@ -1720,6 +2401,7 @@ function cardHTML(c, vd) {
         <p>${c.desc}</p>
         <div class="clip-tags">
           <span class="clip-tag tag-v" style="background:${vd.color}">${vd.label}</span>
+          ${extraVirtue}
           ${c.p.map(p=>`<span class="clip-tag tag-p">${p}</span>`).join('')}
         </div>
         <div class="clip-meta"><span class="material-symbols-outlined">calendar_today</span>${c.date}<span class="material-symbols-outlined">groups</span>${c.body}</div>
@@ -1758,8 +2440,13 @@ function filterVirtue(key) {
   } else {
     document.querySelector(`.sidebar-item[data-virtue="${key}"]`)?.classList.add('active');
   }
-  showBrowse();
+  hideAllViews();
+  document.getElementById('viewBrowse').classList.add('active');
+  document.getElementById('searchInput').value = '';
+  // Show discovery sections only on All Clips
+  renderBrowseDiscovery(key === 'all');
   applyFilters();
+  document.getElementById('mainArea').scrollTop = 0;
 }
 
 function applyFilters() {
@@ -1791,8 +2478,23 @@ function openClip(id) {
   document.getElementById('dBody').textContent = c.body;
   document.getElementById('dDesc').textContent = c.desc;
 
+  // Render jump-to sections (clip-within-a-clip)
+  const sections = getClipSections(c);
+  document.getElementById('clipSections').innerHTML = sections.map((s, i) => `
+    <button class="csb-section${i===0?' active':''}" onclick="jumpToSection(this)">
+      <span class="material-symbols-outlined">${s.icon}</span>
+      ${s.label}
+      <span class="csb-time">${s.time}</span>
+    </button>`).join('');
+
+  let detailExtraVirtue = '';
+  if (c.v2) {
+    const vd2 = V.find(v => v.key === c.v2);
+    if (vd2) detailExtraVirtue = `<span class="clip-tag tag-v" style="background:${vd2.color}">${vd2.label}</span>`;
+  }
   document.getElementById('dTags').innerHTML = `
     <span class="clip-tag tag-v" style="background:${vd.color}">${vd.label}</span>
+    ${detailExtraVirtue}
     ${c.p.map(p=>`<span class="clip-tag tag-p">${p}</span>`).join('')}`;
 
   document.getElementById('dCallouts').innerHTML = `
@@ -1832,7 +2534,7 @@ function openClip(id) {
       </div>`;
   }).join('');
 
-  document.getElementById('viewBrowse').classList.remove('active');
+  hideAllViews();
   document.getElementById('viewDetail').classList.add('active');
   document.getElementById('mainArea').scrollTop = 0;
 }
@@ -1857,8 +2559,7 @@ function doSearch(term) {
 }
 
 function showSearchView(query) {
-  document.getElementById('viewBrowse').classList.remove('active');
-  document.getElementById('viewDetail').classList.remove('active');
+  hideAllViews();
   document.getElementById('viewSearch').classList.add('active');
 
   document.getElementById('searchQueryText').textContent = query;
@@ -1946,74 +2647,133 @@ function clearSearch() {
   document.getElementById('searchInput').value = '';
   searchVirtueFilter = 'all';
   searchTopicFilter = 'all';
-  document.getElementById('viewSearch').classList.remove('active');
-  document.getElementById('viewBrowse').classList.add('active');
-  applyFilters();
+  showHome();
+}
+
+/* ═══════════════════════════════════════════
+   VIEW SWITCHING
+   ═══════════════════════════════════════════ */
+function hideAllViews() {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+}
+
+function setActiveSidebar(id) {
+  document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+  if (id) document.getElementById(id)?.classList.add('active');
+}
+
+function showHome() {
+  hideAllViews();
+  document.getElementById('viewHome').classList.add('active');
+  setActiveSidebar('navHome');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('mainArea').scrollTop = 0;
 }
 
 function showBrowse() {
-  document.getElementById('viewDetail').classList.remove('active');
-  document.getElementById('viewSearch').classList.remove('active');
+  hideAllViews();
   document.getElementById('viewBrowse').classList.add('active');
+  setActiveSidebar('navAll');
+  document.getElementById('mainArea').scrollTop = 0;
+}
+
+function showPlaceholder(id, icon, title, desc) {
+  hideAllViews();
+  document.getElementById('viewPlaceholder').classList.add('active');
+  document.getElementById('ppIcon').innerHTML = `<span class="material-symbols-outlined">${icon}</span>`;
+  document.getElementById('ppTitle').textContent = title;
+  document.getElementById('ppDesc').textContent = desc;
+  setActiveSidebar(null);
+  document.getElementById('mainArea').scrollTop = 0;
+}
+
+function showMapPage() {
+  hideAllViews();
+  document.getElementById('viewMap').classList.add('active');
+  setActiveSidebar(null);
   document.getElementById('mainArea').scrollTop = 0;
 }
 
 /* ═══════════════════════════════════════════
-   TIMELINE — Recently Approved
+   BROWSE DISCOVERY SECTIONS
    ═══════════════════════════════════════════ */
-function renderTimeline() {
-  // Sort clips by date (most recent first), simulate "approved" dates
+function renderBrowseDiscovery(showAll) {
+  const featured = document.getElementById('browseFeatured');
+  const recent = document.getElementById('browseRecent');
+  const topics = document.getElementById('browseTopics');
+
+  if (!showAll) {
+    featured.innerHTML = '';
+    recent.innerHTML = '';
+    topics.innerHTML = '';
+    return;
+  }
+
+  // Featured clip
+  const fc = C[0];
+  const fcv = V.find(v => v.key === fc.v);
+  featured.innerHTML = `
+    <div class="browse-section-head"><h3><span class="material-symbols-outlined">star</span> Featured Clip</h3></div>
+    <div class="featured-clip" onclick="openClip(${fc.id})">
+      <div class="fc-thumb">
+        <div class="play-btn"><span class="material-symbols-outlined">play_arrow</span></div>
+        <div class="fc-badge"><span class="material-symbols-outlined">star</span> Featured</div>
+      </div>
+      <div class="fc-body">
+        <h3>${fc.title}</h3>
+        <p>${fc.desc}</p>
+        <div class="fc-meta">
+          <span class="clip-tag tag-v" style="background:${fcv.color}">${fcv.label}</span>
+          <span class="material-symbols-outlined">location_on</span> ${fc.jur}
+          <span class="material-symbols-outlined">schedule</span> ${fc.dur}
+        </div>
+      </div>
+    </div>`;
+
+  // Recently approved
   const approvedDates = [
-    { id:6, approved:'May 10, 2026' },
-    { id:10, approved:'May 9, 2026' },
-    { id:1, approved:'May 8, 2026' },
-    { id:12, approved:'May 7, 2026' },
-    { id:8, approved:'May 6, 2026' },
-    { id:7, approved:'May 5, 2026' },
-    { id:5, approved:'May 4, 2026' },
-    { id:3, approved:'May 3, 2026' },
-    { id:11, approved:'May 2, 2026' },
-    { id:9, approved:'May 1, 2026' },
-    { id:2, approved:'Apr 30, 2026' },
-    { id:4, approved:'Apr 29, 2026' },
+    { id:6, d:'May 10' }, { id:10, d:'May 9' }, { id:1, d:'May 8' },
+    { id:12, d:'May 7' }, { id:8, d:'May 6' }, { id:7, d:'May 5' },
+    { id:5, d:'May 4' }, { id:3, d:'May 3' },
   ];
-  const strip = document.getElementById('timelineStrip');
-  strip.innerHTML = '';
-  let lastDay = '';
+  recent.innerHTML = `
+    <div class="browse-section-head"><h3><span class="material-symbols-outlined">new_releases</span> Recently Approved</h3></div>
+    <div class="timeline-scroll-wrap">
+      <button class="tl-scroll-btn tl-scroll-left" onclick="scrollTimeline(-1)"><span class="material-symbols-outlined">chevron_left</span></button>
+      <div class="timeline-strip" id="timelineStripBrowse"></div>
+      <button class="tl-scroll-btn tl-scroll-right" onclick="scrollTimeline(1)"><span class="material-symbols-outlined">chevron_right</span></button>
+    </div>`;
+  const strip = document.getElementById('timelineStripBrowse');
   approvedDates.forEach((ad, i) => {
     const clip = C.find(c => c.id === ad.id);
     if (!clip) return;
     const vd = V.find(v => v.key === clip.v);
-    const parts = ad.approved.split(' ');
-    const day = parts[1].replace(',','');
-    const month = parts[0].substring(0,3).toUpperCase();
-    const dayKey = month + day;
-    // Add date marker if new day
-    if (dayKey !== lastDay && i < 8) {
-      const isNew = i < 3;
-      strip.innerHTML += `
-        <div class="tl-date-marker">
-          <div class="tl-dm-month">${month}</div>
-          <div class="tl-dm-day">${day}</div>
-          ${isNew ? '<div style="font-size:8px;color:var(--teal);font-weight:700;margin-top:2px;">NEW</div>' : ''}
-        </div>`;
-      lastDay = dayKey;
+    const parts = ad.d.split(' ');
+    if (i === 0 || approvedDates[i-1]?.d !== ad.d) {
+      strip.innerHTML += `<div class="tl-date-marker"><div class="tl-dm-month">${parts[0].toUpperCase()}</div><div class="tl-dm-day">${parts[1]}</div>${i<2?'<div style="font-size:12px;color:var(--teal);font-weight:700;margin-top:2px;">NEW</div>':''}</div>`;
     }
-    if (i >= 8) return; // Only show 8 in strip
     strip.innerHTML += `
       <div class="tl-card" onclick="openClip(${clip.id})">
-        <div class="tl-card-thumb">
-          <span class="material-symbols-outlined">play_arrow</span>
-          <div class="tl-card-dur">${clip.dur}</div>
-          ${i < 2 ? '<div class="tl-card-new">New</div>' : ''}
-        </div>
-        <div class="tl-card-body">
-          <h4>${clip.title}</h4>
-          <div class="tl-meta"><span class="material-symbols-outlined">location_on</span>${clip.jur}</div>
-          <span class="tl-card-tag" style="background:${vd.color}">${vd.label}</span>
-        </div>
+        <div class="tl-card-thumb"><span class="material-symbols-outlined">play_arrow</span><div class="tl-card-dur">${clip.dur}</div>${i<2?'<div class="tl-card-new">New</div>':''}</div>
+        <div class="tl-card-body"><h4>${clip.title}</h4><div class="tl-meta"><span class="material-symbols-outlined">location_on</span>${clip.jur}</div><span class="tl-card-tag" style="background:${vd.color}">${vd.label}</span></div>
       </div>`;
   });
+
+  // Topics as pills
+  const topicList = [
+    { q:'budget', icon:'payments', label:'Budget & Finance' },
+    { q:'safety', icon:'shield', label:'Public Safety' },
+    { q:'education', icon:'school', label:'Education' },
+    { q:'zoning', icon:'location_city', label:'Zoning & Land Use' },
+    { q:'voting', icon:'how_to_vote', label:'Elections & Voting' },
+    { q:'health', icon:'health_and_safety', label:'Public Health' },
+    { q:'housing', icon:'house', label:'Housing' },
+    { q:'transportation', icon:'directions_bus', label:'Transportation' },
+    { q:'environment', icon:'park', label:'Environment' },
+  ];
+  topics.innerHTML = `
+    <div class="browse-section-head"><h3><span class="material-symbols-outlined">category</span> Browse by Topic</h3></div>
+    <div class="topic-pills">${topicList.map(t => `<button class="topic-pill" onclick="doSearch('${t.q}')"><span class="material-symbols-outlined">${t.icon}</span> ${t.label}</button>`).join('')}</div>`;
 }
 
 /* ═══════════════════════════════════════════
@@ -2079,6 +2839,32 @@ function seekAudio(e) {
   document.getElementById('audioCurrentTime').textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
 }
 
+/* ═══════════════════════════════════════════
+   CLIP SECTIONS (jump-to / clip-within-a-clip)
+   ═══════════════════════════════════════════ */
+function getClipSections(clip) {
+  // Generate plausible sections based on clip content
+  const dur = clip.dur.split(':');
+  const totalSec = parseInt(dur[0]) * 60 + parseInt(dur[1]);
+  const mid1 = Math.floor(totalSec * 0.3);
+  const mid2 = Math.floor(totalSec * 0.6);
+  const m1 = Math.floor(mid1/60), s1 = mid1%60;
+  const m2 = Math.floor(mid2/60), s2 = mid2%60;
+
+  return [
+    { label: 'Context', icon: 'info', time: '0:00' },
+    { label: 'Key Moment', icon: 'star', time: `${m1}:${s1<10?'0':''}${s1}` },
+    { label: 'Response', icon: 'forum', time: `${m2}:${s2<10?'0':''}${s2}` },
+    { label: 'Full Clip', icon: 'play_circle', time: `0:00–${clip.dur}` },
+  ];
+}
+
+function jumpToSection(el) {
+  document.querySelectorAll('.csb-section').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  // In a real implementation, this would seek the video to the timestamp
+}
+
 function scrollTimeline(dir) {
   const strip = document.getElementById('timelineStrip');
   const scrollAmount = 520; // ~2 cards
@@ -2090,7 +2876,6 @@ function scrollTimeline(dir) {
    ═══════════════════════════════════════════ */
 buildSidebar();
 renderBrowse(C);
-renderTimeline();
 </script>
 </body>
 </html>
